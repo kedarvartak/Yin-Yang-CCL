@@ -72,9 +72,16 @@ const Testimonials = () => {
         Ready to level up with us?
       </h3>
 
-        <button className="bg-transparent text-white px-8 py-2 rounded-xl text-lg font-semibold shadow-2xl hover:shadow-white border-solid border-2 border-white" style={{ fontFamily: 'Quicksand' }}>
-          Enroll now!
-        </button>
+      <a
+        href="https://wa.me/919822089970"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-transparent text-white px-8 py-2 rounded-xl text-lg font-semibold shadow-2xl hover:shadow-white border-solid border-2 border-white"
+        style={{ fontFamily: 'Quicksand' }}
+      >
+        Enroll now!
+      </a>
+
       </div>
     </div>
   );

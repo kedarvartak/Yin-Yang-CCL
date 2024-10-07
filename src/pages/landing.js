@@ -6,17 +6,21 @@ import Navbar from '../components/Navbar';
 import Testimonials from '../components/Testimonials';
 import VisionMission from '../components/Vision';
 import Card from '../components/card-1';
+import WhatsApp from '../components/whatsapp';
+import Up from '../components/goUP';
 
 function Landing() {
   return (
     <div className="App">
       <Navbar/>
       <HeroSection/>
+      <WhatsApp/>
+      <Up/>
       <Card/>
       <VisionMission/>
       <Testimonials/>
-      <FAQ/>
       <Associates/>
+      <FAQ/>
       <Footer/>
     </div>
   );

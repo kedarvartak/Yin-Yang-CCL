@@ -55,18 +55,37 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <div className="flex space-x-4 text-4xl mt-6">
-            <a href="#" className="bg-red-800 p-3 rounded-full hover:bg-red-900 transition" aria-label="Facebook">
-              <FaFacebookF className="text-white" />
+
+          <a
+            href="https://www.instagram.com/yinyangpune/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-800 p-3 rounded-full hover:bg-red-900 transition"
+            aria-label="Instagram"
+            >
+            <FaInstagram className="text-white" />
+          </a>
+
+            <a
+            href="https://www.linkedin.com/company/yinyang-center-for-chinese-language/?originalSubdomain=in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-800 p-3 rounded-full hover:bg-red-900 transition"
+            aria-label="LinkedIn"
+            >
+            <FaLinkedinIn className="text-white" />
             </a>
-            <a href="#" className="bg-red-800 p-3 rounded-full hover:bg-red-900 transition" aria-label="Instagram">
-              <FaInstagram className="text-white" />
+
+            <a
+                href="https://wa.me/919822089970"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-800 p-3 rounded-full hover:bg-red-900 transition"
+                aria-label="WhatsApp"
+                >
+                <FaWhatsapp className="text-white" />
             </a>
-            <a href="#" className="bg-red-800 p-3 rounded-full hover:bg-red-800 transition" aria-label="LinkedIn">
-              <FaLinkedinIn className="text-white" />
-            </a>
-            <a href="#" className="bg-red-800 p-3 rounded-full hover:bg-red-900 transition" aria-label="WhatsApp">
-              <FaWhatsapp className="text-white" />
-            </a>
+
           </div>
         </div>
       </div>

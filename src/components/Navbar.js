@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import logo from '../components/assets/yin-logo.png'; // Ensure the path is correct
 
 export default function Navbar() {
-  // State to handle mobile dropdowns
-  const [isBlogOpen, setIsBlogOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <nav className="bg-white z-50 relative">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between h-24"> {/* Increase height of navbar */}
         {/* Logo Section */}
         <div className="flex items-center">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-full max-h-20 object-contain"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-24 max-h-26 object-contain" // Increased height here
+            />
+          </Link>
         </div>
 
         {/* Desktop Menu Items */}
@@ -27,10 +28,16 @@ export default function Navbar() {
             fontWeight: 500,
           }}
         >
-          <li className="hover:text-red-700 cursor-pointer">Home</li>
+          <li className="hover:text-red-700 cursor-pointer">
+            <Link to="/">Home</Link>
+          </li>
 
           {/* Chinese Language Courses Dropdown */}
-          <li className="relative group">
+          <li
+            className="relative group"
+            onMouseEnter={() => setIsCoursesOpen(true)}
+            onMouseLeave={() => setIsCoursesOpen(false)}
+          >
             <button className="hover:text-red-700 cursor-pointer flex items-center">
               Chinese Language Courses
               <svg
@@ -47,54 +54,40 @@ export default function Navbar() {
                 ></path>
               </svg>
             </button>
-            <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 z-50">
+
+            {/* Dropdown Menu */}
+            <ul
+              className={`absolute left-0 top-full w-56 bg-white border rounded-md shadow-lg transition-opacity duration-300 z-50 ${
+                isCoursesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}
+            >
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Beginner Course
+                <Link to="/Teach">What we teach at Yin-Yang</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Intermediate Course
+                <Link to="/Corporate">Corporate services</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Advanced Course
+                <Link to="/ChinaConnect">China connect</Link>
               </li>
             </ul>
           </li>
 
-          <li className="hover:text-red-700 cursor-pointer">Achievements</li>
-          <li className="hover:text-red-700 cursor-pointer">Gallery</li>
-
-          {/* Blog Dropdown */}
-          <li className="relative group">
-            <button className="hover:text-red-700 cursor-pointer flex items-center">
-              Blog
-              <svg
-                className="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            <ul className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 z-50">
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Latest Posts
-              </li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                Tutorials
-              </li>
-              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                News
-              </li>
-            </ul>
+          <li className="hover:text-red-700 cursor-pointer">
+            <Link to="/achievements">Achievements</Link>
+          </li>
+          <li className="hover:text-red-700 cursor-pointer">
+            <Link to="/gallery">Gallery</Link>
           </li>
 
-          <li className="hover:text-red-700 cursor-pointer">About</li>
+          {/* Blog Link */}
+          <li className="hover:text-red-700 cursor-pointer">
+            <Link to="/blogs">Blog</Link>
+          </li>
+
+          <li className="hover:text-red-700 cursor-pointer">
+            <Link to="/About">About</Link>
+          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -146,7 +139,11 @@ export default function Navbar() {
               fontFamily: "'Playfair Display', serif",
             }}
           >
-            <li className="hover:text-red-700 cursor-pointer">Home</li>
+            <li className="hover:text-red-700 cursor-pointer">
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
 
             {/* Chinese Language Courses Mobile Dropdown */}
             <li>
@@ -175,59 +172,47 @@ export default function Navbar() {
               {isCoursesOpen && (
                 <ul className="mt-2 pl-4 space-y-2">
                   <li className="hover:text-red-700 cursor-pointer">
-                    Beginner Course
+                    <Link to="/courses/beginner" onClick={() => setIsMobileMenuOpen(false)}>
+                      Beginner Course
+                    </Link>
                   </li>
                   <li className="hover:text-red-700 cursor-pointer">
-                    Intermediate Course
+                    <Link to="/courses/intermediate" onClick={() => setIsMobileMenuOpen(false)}>
+                      Intermediate Course
+                    </Link>
                   </li>
                   <li className="hover:text-red-700 cursor-pointer">
-                    Advanced Course
+                    <Link to="/courses/advanced" onClick={() => setIsMobileMenuOpen(false)}>
+                      Advanced Course
+                    </Link>
                   </li>
                 </ul>
               )}
             </li>
 
-            <li className="hover:text-red-700 cursor-pointer">Achievements</li>
-            <li className="hover:text-red-700 cursor-pointer">Gallery</li>
-
-            {/* Blog Mobile Dropdown */}
-            <li>
-              <button
-                className="flex items-center justify-between w-full hover:text-red-700 cursor-pointer"
-                onClick={() => setIsBlogOpen(!isBlogOpen)}
-                aria-expanded={isBlogOpen}
-              >
-                <span>Blog</span>
-                <svg
-                  className={`w-4 h-4 transform transition-transform ${
-                    isBlogOpen ? 'rotate-180' : 'rotate-0'
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              {isBlogOpen && (
-                <ul className="mt-2 pl-4 space-y-2">
-                  <li className="hover:text-red-700 cursor-pointer">
-                    Latest Posts
-                  </li>
-                  <li className="hover:text-red-700 cursor-pointer">
-                    Tutorials
-                  </li>
-                  <li className="hover:text-red-700 cursor-pointer">News</li>
-                </ul>
-              )}
+            <li className="hover:text-red-700 cursor-pointer">
+              <Link to="/achievements" onClick={() => setIsMobileMenuOpen(false)}>
+                Achievements
+              </Link>
+            </li>
+            <li className="hover:text-red-700 cursor-pointer">
+              <Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)}>
+                Gallery
+              </Link>
             </li>
 
-            <li className="hover:text-red-700 cursor-pointer">About</li>
+            {/* Blog Link */}
+            <li className="hover:text-red-700 cursor-pointer">
+              <Link to="/blogs" onClick={() => setIsMobileMenuOpen(false)}>
+                Blog
+              </Link>
+            </li>
+
+            <li className="hover:text-red-700 cursor-pointer">
+              <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>
+                About
+              </Link>
+            </li>
           </ul>
         </div>
       )}

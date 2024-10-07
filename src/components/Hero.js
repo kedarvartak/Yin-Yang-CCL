@@ -26,9 +26,16 @@ export default function HeroSection() {
 
 
         {/* Button */}
-        <button className="mt-12 px-8 py-2 text-lg border-2 border-red-500 text-red-500 font-semibold rounded-xl shadow-xl hover:shadow-red-300 }" style={{ fontFamily: 'Quicksand' }}>
-          Enroll now!
-        </button>
+        <a
+          href="https://wa.me/919822089970" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="mt-12 mb-10 px-8 py-2 text-lg border-2 border-red-500 text-red-500 font-semibold rounded-xl shadow-xl hover:shadow-red-300" style={{ fontFamily: 'Quicksand' }}>
+            Enroll now!
+          </button>
+        </a>
+
       </div>
     </section>
   );

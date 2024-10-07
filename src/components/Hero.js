@@ -8,10 +8,10 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="container mx-auto py-24 px-4 text-center relative z-10">
-        <h1 className="text-5xl text-teal-600 md:text-6xl font-semibold" style={{ fontFamily: 'Quicksand' }}>
+        <h1 className="text-7xl text-teal-600  font-bold lg:scale-y-[1.20]" style={{ fontFamily: "'Playfair Display', serif" }}>
           Discover China the <span className="text-red-500">Yin Yang</span> way.
         </h1>
-        <p className="text-2xl text-teal-600 md:text-3xl mt-4" style={{ fontFamily: 'Quicksand' }}>
+        <p className="text-4xl text-teal-600 font-semibold  mt-4 lg:scale-y-[1.20]" style={{ fontFamily: "'Playfair Display', serif" }}>
           the ultimate destination for chinese language and culture
         </p>
 
@@ -26,7 +26,7 @@ export default function HeroSection() {
 
 
         {/* Button */}
-        <button className="mt-12 px-8 py-2 text-lg border border-red-500 text-red-500 font-semibold rounded-xl shadow-xl hover:shadow-red-300 style={{ fontFamily: 'Quicksand' }}">
+        <button className="mt-12 px-8 py-2 text-lg border-2 border-red-500 text-red-500 font-semibold rounded-xl shadow-xl hover:shadow-red-300 }" style={{ fontFamily: 'Quicksand' }}>
           Enroll now!
         </button>
       </div>

@@ -99,7 +99,7 @@ export default function UniqueComponent() {
         {/* Left Column */}
         <div className="md:col-span-1 bg-teal-100/40 p-6">
           <h2
-            className="text-red-500 text-6xl font-bold mb-4"
+            className="text-red-500 text-6xl font-bold mb-4 lg:scale-y-[1.20]" 
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             What Makes <span className="text-teal-600">YinYang</span> Unique?

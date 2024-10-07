@@ -1,17 +1,11 @@
 
-import './App.css';
-import HeroSection from './components/Hero';
-import Navbar from './components/Navbar';
-import VisionMission from './components/Vision';
-import Card from './components/card-1';
+import Landing from "./pages/landing";
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <HeroSection/>
-      <Card/>
-      <VisionMission/>
+    <Landing/>
     </div>
   );
 }

@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+// src/components/Associates.js
+import React from "react";
+
+// First Group of Associates
 import khs from "../components/assets/khs.png";
 import kpit from "../components/assets/kpit.png";
 import kirloskar from "../components/assets/kirloskar solar.png";
@@ -10,145 +13,105 @@ import belrise from "../components/assets/BELRISE INDUSTRIES LIMITED.png";
 import hyosung from "../components/assets/Hyosung T&D INDIA Pvt. Ltd..png";
 import tsl from "../components/assets/TSL Consulting.png";
 
-// Placeholder Component for each Associate
-const AssociatePlaceholder = ({ placeholder }) => {
-  return (
-    <div className="flex justify-center items-center w-full rounded-lg h-60 border border-gray-300 bg-gray-100 p-4">
-      <img
-        src={placeholder}
-        alt="Associate Placeholder"
-        className="w-full h-full object-contain"
-      />
-    </div>
-  );
-};
+// Second Group of Associates
+import ajanta from "../components/assets/Ajanta Universal Fabrics Ltd..webp";
+import alta from "../components/assets/Alta Lab.png";
+import bharat from "../components/assets/BHARAT FORGE.jpg";
+import causis from "../components/assets/CAUSIS E-MOBILITY PRIVATE LIMITED.webp";
+import coforge from "../components/assets/Coforge.webp";
+import curiotory from "../components/assets/Curiotory.png";
+import des from "../components/assets/Deccan Education Society.png";
+import deepak from "../components/assets/Deepak Fertilisers.png";
+import desai from "../components/assets/desai bandhu ambewale.png";
+import dolphin from "../components/assets/Dolphin international.png";
 
-// Main Component for the Associates Carousel
-const Associates = () => {
-  // Array of all associate images
-  const associates = [
-    khs,
-    kpit,
-    kirloskar,
-    nie,
-    wordsmith,
-    med,
-    vedanta,
-    belrise,
-    hyosung,
-    tsl,
-  ];
+// First Array of Associates
+const associatesGroup1 = [
+  { src: khs, alt: "KHS" },
+  { src: kpit, alt: "KPIT" },
+  { src: kirloskar, alt: "Kirloskar Solar" },
+  { src: nie, alt: "NIE Newspaper" },
+  { src: wordsmith, alt: "Wordsmith Language Solution" },
+  { src: med, alt: "University of Kansas Medical Center" },
+  { src: vedanta, alt: "Vedanta Limited" },
+  { src: belrise, alt: "Belrise Industries Limited" },
+  { src: hyosung, alt: "Hyosung T&D India Pvt. Ltd." },
+  { src: tsl, alt: "TSL Consulting" },
+];
 
-  // State to track the current slide index
-  const [currentSlide, setCurrentSlide] = useState(0);
+// Second Array of Associates
+const associatesGroup2 = [
+  { src: ajanta, alt: "Ajanta Universal Fabrics Ltd." },
+  { src: alta, alt: "Alta Lab" },
+  { src: bharat, alt: "Bharat Forge" },
+  { src: causis, alt: "CAUSIS E-Mobility Pvt. Ltd." },
+  { src: coforge, alt: "Coforge" },
+  { src: curiotory, alt: "Curiotory" },
+  { src: des, alt: "Deccan Education Society" },
+  { src: deepak, alt: "Deepak Fertilisers" },
+  { src: desai, alt: "Desai Bandhu Ambewale" },
+  { src: dolphin, alt: "Dolphin International" },
+];
 
-  // State to track images per slide based on screen size
-  const [imagesPerSlide, setImagesPerSlide] = useState(getImagesPerSlide());
-
-  // Function to determine images per slide based on window width
-  function getImagesPerSlide() {
-    const width = window.innerWidth;
-    if (width >= 1024) return 4; // Desktop: 4 images per slide
-    if (width >= 768) return 2;  // Tablet: 2 images per slide
-    return 1;                    // Mobile: 1 image per slide
-  }
-
-  // Update imagesPerSlide on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setImagesPerSlide(getImagesPerSlide());
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Calculate total number of slides
-  const totalSlides = Math.ceil(associates.length / imagesPerSlide);
-
-  // Auto-play functionality: change slide every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 3000); // 3000ms = 3 seconds
-
-    return () => clearInterval(interval); // Clean up on unmount
-  }, [totalSlides]);
-
-  // Handle Next Slide manually
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
-
-  // Handle Previous Slide manually
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-
-  // Calculate the translateX value based on the current slide
-  const translateX = () => {
-    return -(currentSlide * 100);
-  };
+const Associates = ({ reverse = false, animationDuration = "20s" }) => {
+  // Duplicate the arrays for seamless scrolling
+  const tickerAssociates1 = [...associatesGroup1, ...associatesGroup1];
+  const tickerAssociates2 = [...associatesGroup2, ...associatesGroup2];
 
   return (
-    <div className="font-['Playfair_Display'] py-12">
-      {/* Section Title */}
-      <h2 className="text-5xl lg:text-6xl text-red-500 font-bold mt-10 text-left mx-16 mb-10">
+    <div className="overflow-hidden w-full p-8 my-8">
+      <h3
+        className="text-6xl scale-y-120 font-bold text-red-600 mb-12 scale-y-[1.20] text-left ml-12"
+        style={{ fontFamily: "'Playfair Display', serif" }}
+      >
         Our Associates
-      </h2>
-
-      {/* Carousel Container */}
-      <div className="relative overflow-hidden mx-16">
-        {/* Carousel Track */}
+      </h3>
+      
+      {/* Container for Both Tickers with Space Between */}
+      <div className="space-y-12">
+        
+        {/* First Ticker */}
         <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{
-            transform: `translateX(${translateX()}%)`,
-            width: `${(100 / imagesPerSlide) * totalSlides}%`,
-          }}
+          className={`flex ${
+            reverse ? "flex-row-reverse" : "flex-row"
+          } ${reverse ? "animate-scrollRight" : "animate-scrollLeft"}`}
+          style={{ animationDuration }}
         >
-          {associates.map((placeholder, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 px-2"
-              style={{ width: `${100 / imagesPerSlide}%` }}
-            >
-              <AssociatePlaceholder placeholder={placeholder} />
+          {tickerAssociates1.map((logo, index) => (
+            <div key={`group1-${logo.alt}-${index}`} className="flex-shrink-0 px-4">
+              <div className="flex justify-center items-center w-48 h-40 rounded-lg border border-gray-300 bg-gray-100 p-4 shadow-md transform transition-transform duration-300 hover:scale-105">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Previous Button */}
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 transition-colors duration-300"
-          aria-label="Previous Slide"
+        {/* Second Ticker */}
+        <div
+          className={`flex ${
+            reverse ? "flex-row-reverse" : "flex-row"
+          } ${reverse ? "animate-scrollRight" : "animate-scrollLeft"}`}
+          style={{ animationDuration }}
         >
-          &#10094; {/* Left Arrow */}
-        </button>
+          {tickerAssociates2.map((logo, index) => (
+            <div key={`group2-${logo.alt}-${index}`} className="flex-shrink-0 px-4">
+              <div className="flex justify-center items-center w-48 h-40 rounded-lg border border-gray-300 bg-gray-100 p-4 shadow-md transform transition-transform duration-300 hover:scale-105">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
 
-        {/* Next Button */}
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 transition-colors duration-300"
-          aria-label="Next Slide"
-        >
-          &#10095; {/* Right Arrow */}
-        </button>
-      </div>
-
-      {/* Indicators */}
-      <div className="flex justify-center mt-4">
-        {Array.from({ length: totalSlides }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`mx-1 w-3 h-3 rounded-full ${
-              currentSlide === index ? "bg-teal-600" : "bg-gray-300"
-            } hover:bg-teal-500 transition-colors duration-300`}
-            aria-label={`Go to slide ${index + 1}`}
-          ></button>
-        ))}
       </div>
     </div>
   );

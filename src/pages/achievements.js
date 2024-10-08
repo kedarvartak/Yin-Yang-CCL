@@ -3,63 +3,39 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import stud from '../components/assets/2 students got award in Chinese Bridge Middle school competetion  april 17.jpg';
 import prize from '../components/assets/Student got 1st price in china india bridge competetion July 18.jpg';
+import team from '../components/assets/team.png'
+import inter from '../components/assets/inter.jpg'
+import chancellor from '../components/assets/chancellor.jpg'
 
 const achievementsData = [
   {
+    id: 10,
+    text: 'Our founder Mrs. Yashodhara Gadgil proudly serves as the official interpreter between the mayors of Pune and China, fostering global connections and collaboration.',
+    image: chancellor,
+  },
+
+  {
     id: 1,
-    text: '2 students got award in Chinese Bridge Middle school competetion april 17',
+    text: '2 students got award in Chinese Bridge Middle school competition April 17',
     image: stud,
   },
   {
     id: 2,
-    text: 'Student got 1st price in china india bridge competetion July 18',
+    text: 'Student got 1st price in China India Bridge competition July 18',
     image: prize,
-  },
-  {
-    id: 3,
-    text: 'Over 1500 students have successfully completed education and received the language certification.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+3',
   },
   {
     id: 4,
     text: 'A dedicated team of 10+ teachers along with native and non-native speakers involved in student success.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+4',
-  },
-  {
-    id: 5,
-    text: 'Successfully conducted numerous online and offline training programs.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+5',
+    image: team,
   },
   {
     id: 6,
     text: 'Established partnerships with international educational institutions.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+6',
+    image: inter,
   },
-  {
-    id: 7,
-    text: 'Developed a comprehensive online learning platform with interactive tools.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+7',
-  },
-  {
-    id: 8,
-    text: 'Hosted annual cultural exchange programs attracting participants globally.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+8',
-  },
-  {
-    id: 9,
-    text: 'Received outstanding feedback from over 2000 students in annual surveys.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+9',
-  },
-  {
-    id: 10,
-    text: 'Implemented innovative teaching methodologies enhancing language acquisition.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+10',
-  },
-  {
-    id: 11,
-    text: 'Expanded to multiple cities, reaching a wider audience and impact.',
-    image: 'https://via.placeholder.com/600x400?text=Achievement+11',
-  },
+  
+  
 ];
 
 // Additional Achievements and Awards Data
@@ -101,7 +77,7 @@ export default function AchievementsPage() {
       {/* Achievements Carousel Section */}
       <div className="container mx-auto px-6 py-16 flex-grow">
         <h2
-          className="text-6xl font-bold text-teal-600 mb-16 mt-8 text-left lg:scale-y-[1.20]"
+          className="text-5xl sm:text-5xl lg:text-6xl font-bold text-teal-600 mb-16 mt-8 text-left lg:scale-y-[1.20]"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Achievements
@@ -110,40 +86,32 @@ export default function AchievementsPage() {
         {/* Carousel Container */}
         <div className="overflow-hidden relative">
           <div className="flex animate-scroll">
-            {duplicatedAchievements.map((achievement, index) => {
-              // Determine if the current index is odd or even
-              const isOdd = index % 2 !== 0;
+            {duplicatedAchievements.map((achievement, index) => (
+              <div
+                key={`${achievement.id}-${index}`}
+                className="flex-shrink-0 w-80 md:w-96 lg:w-1/3 px-4 py-8"
+              >
+                <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 flex flex-col h-full">
+                  {/* Image Section */}
+                  <img
+                    src={achievement.image}
+                    alt={`Achievement ${achievement.id} - ${achievement.text}`}
+                    className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-t-3xl"
+                    loading="lazy"
+                  />
 
-              // Set text alignment based on image position
-              const textAlignment = isOdd ? 'text-left ml-6' : 'text-right mr-6';
-
-              return (
-                <div
-                  key={`${achievement.id}-${index}`}
-                  className="flex-shrink-0 w-80 md:w-96 lg:w-1/3 px-6 py-8"
-                >
-                  <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 overflow-hidden transform hover:scale-105 flex flex-col h-full">
-                    {/* Image Section */}
-                    <img
-                      src={achievement.image}
-                      alt={`Achievement ${achievement.id} - ${achievement.text}`}
-                      className="w-full h-56 object-cover"
-                      loading="lazy"
-                    />
-
-                    {/* Text Section */}
-                    <div className={`p-6 flex-grow ${textAlignment}`}>
-                      <p
-                        className="text-gray-800 text-center text-lg md:text-xl font-medium leading-relaxed"
-                        style={{ fontFamily: 'Quicksand' }}
-                      >
-                        {achievement.text}
-                      </p>
-                    </div>
+                  {/* Text Section */}
+                  <div className="p-6 flex-grow text-left">
+                    <p
+                      className="text-gray-800 text-base sm:text-lg md:text-xl font-medium leading-relaxed"
+                      style={{ fontFamily: 'Quicksand, sans-serif' }}
+                    >
+                      {achievement.text}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -151,7 +119,7 @@ export default function AchievementsPage() {
       {/* Other Achievements and Awards Section */}
       <div className="container mx-auto px-6 pb-16">
         <h3
-          className="text-4xl font-semibold text-teal-600 mb-8"
+          className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-teal-600 mb-8 text-left"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Other Achievements and Awards for Yin-Yang
@@ -160,8 +128,8 @@ export default function AchievementsPage() {
           {otherAchievementsData.map((achievement, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-6">
               <p
-                className="text-gray-700 text-md md:text-lg"
-                style={{ fontFamily: 'Quicksand' }}
+                className="text-gray-700 text-sm sm:text-base md:text-lg"
+                style={{ fontFamily: 'Quicksand, sans-serif' }}
               >
                 {achievement}
               </p>
@@ -169,8 +137,6 @@ export default function AchievementsPage() {
           ))}
         </div>
       </div>
-
-      <Footer />
 
       {/* Custom Styles for Animation */}
       <style jsx>{`
@@ -192,6 +158,8 @@ export default function AchievementsPage() {
           animation-play-state: paused;
         }
       `}</style>
+
+      <Footer />
     </div>
   );
 }

@@ -3,12 +3,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
+import CallButton from '../components/call';
 
 export default function Teach() {
   return (
     <div>
       <Navbar />
       <WhatsApp/>
+      <CallButton/>
       <WhatsAppAndScrollToTop/>
       {/* Main Container */}
       <div className="container mx-auto py-16 px-4 lg:px-0">

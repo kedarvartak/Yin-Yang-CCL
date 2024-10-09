@@ -8,6 +8,7 @@ import inter from '../components/assets/inter.jpg'
 import chancellor from '../components/assets/chancellor.jpg'
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
+import CallButton from '../components/call';
 
 const achievementsData = [
   {
@@ -77,7 +78,7 @@ export default function AchievementsPage() {
       <WhatsApp/>
       <WhatsAppAndScrollToTop/>
       <Navbar />
-
+      <CallButton/>
       {/* Achievements Carousel Section */}
       <div className="container mx-auto px-6 py-16 flex-grow">
         <h2

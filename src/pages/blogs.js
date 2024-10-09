@@ -5,6 +5,7 @@ import designImage from '../components/assets/design.png'; // Adjust the path as
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import { Link } from 'react-router-dom';
+import CallButton from '../components/call';
 
 const blogs = [
   {
@@ -57,6 +58,7 @@ export default function Blogs() {
       <WhatsApp />
       <WhatsAppAndScrollToTop />
       <Navbar />
+      <CallButton/>
       <main className="flex-grow px-4 sm:px-6 md:px-8 lg:px-12 mb-16 py-8">
         {/* Blogs Title */}
         <div className="mb-10">

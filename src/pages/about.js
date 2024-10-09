@@ -13,6 +13,7 @@ import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import shivani from '../components/assets/shivani oak.jpeg';
 import gayatree from '../components/assets/gayatree joshi.jpeg'
+import CallButton from '../components/call';
 
 // Placeholder images for team members without local assets
 const placeholderImage = 'https://via.placeholder.com/150x200';
@@ -128,6 +129,7 @@ export default function About() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <WhatsApp/>
+      <CallButton/>
       <WhatsAppAndScrollToTop/>
       {/* About Section */}
       <div className="container mx-auto py-16 px-4 lg:px-0">

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
+import CallButton from '../components/call';
 
 export default function ChinaConnect() {
   return (
@@ -10,6 +11,7 @@ export default function ChinaConnect() {
       <Navbar />
       <WhatsApp/>
       <WhatsAppAndScrollToTop/>
+      <CallButton/>
       <div className="bg-white py-12">
         {/* Header Section */}
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-left px-4 sm:px-6 lg:px-8">

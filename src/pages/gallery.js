@@ -94,7 +94,7 @@ export default function Gallery() {
           <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[600px] overflow-hidden rounded-lg shadow-lg">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/0aM2ScRxWT0"
+              src="https://www.youtube.com/embed/5v2QjAfI8oM"
               title="Our YouTube Channel Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

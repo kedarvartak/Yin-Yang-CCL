@@ -5,13 +5,7 @@ import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import { Link } from 'react-router-dom';
 import CallButton from '../components/call';
-import doodle1 from '../components/assets/doodle1.avif';
-import doodle2 from '../components/assets/doodle2.jpg';
-import doodle3 from '../components/assets/doodle3.webp';
-import doodle4 from '../components/assets/doodle4.jpg';
-
-// List of doodles
-const doodles = [doodle1, doodle2, doodle3, doodle4];
+import dood from '../components/assets/dood.png'; // Import the single doodle image
 
 const blogs = [
   {
@@ -78,50 +72,45 @@ export default function Blogs() {
 
         {/* Blogs Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {blogs.map((blog, index) => {
-            // Randomly select a doodle
-            const randomDoodle = doodles[Math.floor(Math.random() * doodles.length)];
-
-            return (
+          {blogs.map((blog, index) => (
+            <div
+              key={index}
+              className="bg-teal-600 text-white p-6 rounded-lg shadow-lg flex flex-col"
+            >
+              {/* Image Section */}
               <div
-                key={index}
-                className="bg-teal-600 text-white p-6 rounded-lg shadow-lg flex flex-col"
+                className="h-40 mb-4 rounded bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${dood})`, // Apply the same dood image for every card
+                }}
+              ></div>
+
+              {/* Title */}
+              <h2
+                className="text-xl sm:text-2xl font-semibold mb-2"
+                style={{ fontFamily: 'Quicksand' }}
               >
-                {/* Image Section */}
-                <div
-                  className="h-40 mb-4 rounded bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${randomDoodle})`,
-                  }}
-                ></div>
+                {blog.title}
+              </h2>
 
-                {/* Title */}
-                <h2
-                  className="text-xl sm:text-2xl font-semibold mb-2"
-                  style={{ fontFamily: 'Quicksand' }}
-                >
-                  {blog.title}
-                </h2>
+              {/* Description */}
+              <p
+                className="text-sm sm:text-base flex-grow mb-4"
+                style={{ fontFamily: 'Quicksand' }}
+              >
+                {blog.description}
+              </p>
 
-                {/* Description */}
-                <p
-                  className="text-sm sm:text-base flex-grow mb-4"
-                  style={{ fontFamily: 'Quicksand' }}
-                >
-                  {blog.description}
-                </p>
-
-                {/* Read More Link */}
-                <Link
-                  to={blog.link}
-                  className="text-white underline text-md sm:text-lg self-start"
-                  style={{ fontFamily: 'Quicksand' }}
-                >
-                  Read More
-                </Link>
-              </div>
-            );
-          })}
+              {/* Read More Link */}
+              <Link
+                to={blog.link}
+                className="text-white underline text-md sm:text-lg self-start"
+                style={{ fontFamily: 'Quicksand' }}
+              >
+                Read More
+              </Link>
+            </div>
+          ))}
         </div>
       </main>
       <Footer />

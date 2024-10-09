@@ -1,12 +1,15 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsApp from '../components/whatsapp';
+import WhatsAppAndScrollToTop from '../components/goUP';
 
 export default function Corporate() {
   return (
     <div>
       <Navbar />
-
+      <WhatsApp/>
+      <WhatsAppAndScrollToTop/>
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}

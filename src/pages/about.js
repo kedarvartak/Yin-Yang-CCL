@@ -9,6 +9,8 @@ import eepsita from '../components/assets/Eepsita Kelar.png';
 import neha from '../components/assets/Neha Kulkarni.png';
 import jui from '../components/assets/Jui Kahate.png';
 import anu from '../components/assets/Anuprita Lele.png';
+import WhatsApp from '../components/whatsapp';
+import WhatsAppAndScrollToTop from '../components/goUP';
 
 // Placeholder images for team members without local assets
 const placeholderImage = 'https://via.placeholder.com/150x200';
@@ -123,7 +125,8 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-
+      <WhatsApp/>
+      <WhatsAppAndScrollToTop/>
       {/* About Section */}
       <div className="container mx-auto py-16 px-4 lg:px-0">
         {/* Title */}

@@ -2,63 +2,60 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import designImage from '../components/assets/design.png'; // Adjust the path as necessary
+import WhatsApp from '../components/whatsapp';
+import WhatsAppAndScrollToTop from '../components/goUP';
+import { Link } from 'react-router-dom';
 
 const blogs = [
   {
-    title: 'Importance of learning Mandarin',
+    title: 'China’s Evolving Demographic Crisis',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+      'Understanding the impact of Chinas population decline and its global implications',
+    link: '/Crisis',  // Add the appropriate link here
   },
   {
-    title: 'Indo-China relations: history and current',
+    title: 'Political Representation to Ethnic Groups in China',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+      'Being an old civilization, China has a significant diversity in population, especially in terms of different ethnicities getting assimilated at certain periods in history',
+    link: '/Political',  // Add the appropriate link here
   },
   {
-    title: 'Role of Calligraphy',
+    title: 'China’s Global Security Initiative',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
-  },
-  {
-    title: 'Corners of China',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
-  },
-  {
-    title: 'Travel blog',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
-  },
-  {
-    title: 'Prathamesh - for students, how to practice',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+      'China is presently one of the largest military powers in the world in all respects. As a rising military power, it aims to replace the USA’s place as a global net security provider.',
+    link: '/Secure',  // Add the appropriate link here
   },
   {
     title: 'काळाची गरज - सुमॅन्डरिन व्हा ',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+    link: '/Marfour',  // Add the appropriate link here
   },
   {
     title: 'चीनी भाषेचे स्वरूप',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+    link: '/Martwo',  // Add the appropriate link here
   },
   {
     title: 'चिनी भाषा जाणणार्‍यांसाठीच्या विविध संधी',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+    link: '/Marthree',  // Add the appropriate link here
   },
   {
     title: 'चिनी भाषा कोणी शिकावी व परीक्षांबद्दलची माहिती',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+    link: '/Marone',  // Add the appropriate link here
   },
 ];
 
 export default function Blogs() {
   return (
     <div className="flex flex-col min-h-screen">
+      <WhatsApp />
+      <WhatsAppAndScrollToTop />
       <Navbar />
       <main className="flex-grow px-4 sm:px-6 md:px-8 lg:px-12 mb-16 py-8">
         {/* Blogs Title */}
@@ -103,13 +100,13 @@ export default function Blogs() {
               </p>
 
               {/* Read More Link */}
-              <a
-                href="#"
+              <Link
+                to={blog.link}
                 className="text-white underline text-md sm:text-lg self-start"
                 style={{ fontFamily: 'Quicksand' }}
               >
                 Read More
-              </a>
+              </Link>
             </div>
           ))}
         </div>

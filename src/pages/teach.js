@@ -1,12 +1,15 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsApp from '../components/whatsapp';
+import WhatsAppAndScrollToTop from '../components/goUP';
 
 export default function Teach() {
   return (
     <div>
       <Navbar />
-
+      <WhatsApp/>
+      <WhatsAppAndScrollToTop/>
       {/* Main Container */}
       <div className="container mx-auto py-16 px-4 lg:px-0">
         {/* Title and Subtitle */}
@@ -76,7 +79,7 @@ export default function Teach() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* HSK 1 & 2 */}
             <div className="bg-red-600 p-6 rounded-lg shadow-lg">
-              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK 1 & 2</h3>
+              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK <span  style={{ fontFamily: "'Quicksand', sans-serif" }}>1 & 2</span> </h3>
               <p className="text-white lg:scale-y-[1.20] text-3xl" style={{ fontFamily: "'Playfair Display', serif" }}>
                 60 hours each
               </p>
@@ -85,7 +88,7 @@ export default function Teach() {
 
             {/* HSK 3 & 4 */}
             <div className="bg-red-600 p-6 rounded-lg shadow-lg">
-              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK 3 & 4</h3>
+              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK <span  style={{ fontFamily: "'Quicksand', sans-serif" }}>3 & 4</span></h3>
               <p className="text-white lg:scale-y-[1.20] text-3xl" style={{ fontFamily: "'Playfair Display', serif" }}>
                 3-130 hours (HSK 3) / 4-140 hours (HSK 4)
               </p>
@@ -94,7 +97,7 @@ export default function Teach() {
 
             {/* HSK 5 */}
             <div className="bg-red-600 p-6 rounded-lg shadow-lg">
-              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK 5</h3>
+              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK <span  style={{ fontFamily: "'Quicksand', sans-serif" }}>5</span></h3>
               <p className="text-white lg:scale-y-[1.20] text-3xl" style={{ fontFamily: "'Playfair Display', serif" }}>
                 200 hours
               </p>
@@ -103,7 +106,7 @@ export default function Teach() {
 
             {/* HSK 6 */}
             <div className="bg-red-600 p-6 rounded-lg shadow-lg">
-              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK 6</h3>
+              <h3 className="text-5xl lg:scale-y-[1.20] text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>HSK <span  style={{ fontFamily: "'Quicksand', sans-serif" }}>6</span></h3>
               <p className="text-white lg:scale-y-[1.20] text-3xl" style={{ fontFamily: "'Playfair Display', serif" }}>
                 250 hours
               </p>

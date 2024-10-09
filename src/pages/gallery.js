@@ -10,6 +10,8 @@ import school3 from '../components/assets/school3.jpg';
 import waah from '../components/assets/waah.jpg';
 import baal from '../components/assets/Bal Bharati Std. 11 book Release July 19.jpg';
 import play from '../components/assets/play.jpg';
+import WhatsApp from '../components/whatsapp';
+import WhatsAppAndScrollToTop from '../components/goUP';
 
 export default function Gallery() {
   const galleryImages = [
@@ -24,7 +26,8 @@ export default function Gallery() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-
+      <WhatsApp/>
+      <WhatsAppAndScrollToTop/>
       <main className="flex-grow px-4 sm:px-6 md:px-10 mb-12">
         {/* Press & Media Section */}
         <div className="p-4 sm:p-6 mt-12 space-y-6">

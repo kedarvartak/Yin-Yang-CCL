@@ -1,5 +1,6 @@
 // src/components/Footer.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
@@ -25,25 +26,33 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               <li>
-                <button className="bg-red-800 text-lg sm:text-xl font-semibold text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-red-900 transition w-full" style={{ fontFamily: "Quicksand, sans-serif" }}>
+                <Link 
+                  to="/Teach" 
+                  className="bg-red-800 text-lg sm:text-xl font-semibold text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-red-900 transition w-full flex items-center justify-center"
+                  style={{ fontFamily: "Quicksand, sans-serif" }}
+                >
                   CHINESE LANGUAGE COURSES
-                </button>
+                </Link>
               </li>
               <li>
                 <div className="flex space-x-4">
-                  <button className="bg-red-800 text-lg sm:text-xl font-semibold text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-red-900 transition flex-1" style={{ fontFamily: "Quicksand, sans-serif" }}>
+                  <Link 
+                    to="/blogs" 
+                    className="bg-red-800 text-lg sm:text-xl font-semibold text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-red-900 transition flex-1 flex items-center justify-center"
+                    style={{ fontFamily: "Quicksand, sans-serif" }}
+                  >
                     BLOG
-                  </button>
-                  <button className="bg-red-800 text-lg sm:text-xl font-semibold text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-red-900 transition flex-1" style={{ fontFamily: "Quicksand, sans-serif" }}>
+                  </Link>
+                  <Link 
+                    to="/About" 
+                    className="bg-red-800 text-lg sm:text-xl font-semibold text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-red-900 transition flex-1 flex items-center justify-center"
+                    style={{ fontFamily: "Quicksand, sans-serif" }}
+                  >
                     ABOUT US
-                  </button>
+                  </Link>
                 </div>
               </li>
-              <li>
-                <button className="bg-red-800 text-lg sm:text-xl font-semibold text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-red-900 transition w-full" style={{ fontFamily: "Quicksand, sans-serif" }}>
-                  CONTACT
-                </button>
-              </li>
+              
             </ul>
           </div>
           

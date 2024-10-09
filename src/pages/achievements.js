@@ -6,6 +6,8 @@ import prize from '../components/assets/Student got 1st price in china india bri
 import team from '../components/assets/team.png'
 import inter from '../components/assets/inter.jpg'
 import chancellor from '../components/assets/chancellor.jpg'
+import WhatsApp from '../components/whatsapp';
+import WhatsAppAndScrollToTop from '../components/goUP';
 
 const achievementsData = [
   {
@@ -72,6 +74,8 @@ export default function AchievementsPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
+      <WhatsApp/>
+      <WhatsAppAndScrollToTop/>
       <Navbar />
 
       {/* Achievements Carousel Section */}

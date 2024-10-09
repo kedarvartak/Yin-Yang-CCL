@@ -11,6 +11,8 @@ import jui from '../components/assets/Jui Kahate.png';
 import anu from '../components/assets/Anuprita Lele.png';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
+import shivani from '../components/assets/shivani oak.jpeg';
+import gayatree from '../components/assets/gayatree joshi.jpeg'
 
 // Placeholder images for team members without local assets
 const placeholderImage = 'https://via.placeholder.com/150x200';
@@ -83,7 +85,7 @@ export default function About() {
     },
     {
       name: 'Shivani Oak',
-      image: placeholderImage, // Replace with actual image path if available
+      image: shivani, // Replace with actual image path if available
       roles: [
         'MA in International Relations',
         'Pursuing HSK 5',
@@ -112,7 +114,7 @@ export default function About() {
     },
     {
       name: 'Gayatree Joshi',
-      image: placeholderImage, // Replace with actual image path if available
+      image: gayatree, // Replace with actual image path if available
       roles: [
         'BA, Pursuing MBA',
         'Pursuing HSK 5',

@@ -28,25 +28,25 @@ const blogs = [
   {
     title: 'काळाची गरज - सुमॅन्डरिन व्हा ',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+      'पूर्वापारपासून मनुष्य विविध भाषा शिकत आला आहे. भाषा हे आपले मत विचार व्यक्त करायचे माध्यम आहेच पण दैनंदिन व्यवहार व व्यवसायाचे महत्त्वाचे साधन आहे. ',
     link: '/Marfour',  // Add the appropriate link here
   },
   {
     title: 'चीनी भाषेचे स्वरूप',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+      'चिनी भाषा ही तांत्रिकदृष्ट्या भाषा नाही तर मॅन्डरिन ही एक पैचिंग बीजिंग जवळ बोलली जाणारी एक बोली भाषा आहे. संपूर्ण चीनमध्ये दोनशेपेक्षा जास्त बोली भाषा अजूनही अस्तित्वात आहेत',
     link: '/Martwo',  // Add the appropriate link here
   },
   {
     title: 'चिनी भाषा जाणणार्‍यांसाठीच्या विविध संधी',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+      'पूर्वी एकच पदवी घ्या आणि त्या जोरावर उत्तम नोकरी मिळवा हे सूत्र आपल्याकडे वापरलं जायचं. जसं जसं जग बदललं तसं अधिक व वेगळे ज्ञान मिळवण्याची गरज वाढली.',
     link: '/Marthree',  // Add the appropriate link here
   },
   {
     title: 'चिनी भाषा कोणी शिकावी व परीक्षांबद्दलची माहिती',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor sapien, tempus eu interdum quis, feugiat at odio.',
+      'भाषा शिकण्यासाठी खरंतर वयाची कोणतीच अट नसते. परदेशी भाषा शिकताना प्रत्येक जणच त्या भाषेच्या बालवाडीत असतो.',
     link: '/Marone',  // Add the appropriate link here
   },
 ];

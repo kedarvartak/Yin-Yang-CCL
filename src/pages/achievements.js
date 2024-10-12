@@ -11,12 +11,13 @@ import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import CallButton from '../components/call';
 import { FaAward, FaUniversity, FaUserGraduate, FaGlobeAsia } from 'react-icons/fa';
+import jinhua from "../components/assets/jinhua.jpg"
 
 const achievementsData = [
   {
     id: 10,
     text: 'Our founder Mrs. Yashodhara Gadgil proudly serves as the official interpreter between the mayors of Pune and China, fostering global connections and collaboration.',
-    image: chancellor,
+    image: jinhua,
   },
   {
     id: 1,

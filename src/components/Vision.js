@@ -28,13 +28,13 @@ export const VisionMission = () => {
               className="mb-6 text-left md:text-justify"
               style={{ fontFamily: "Quicksand, sans-serif" }}
             >
-              At Yin Yang, our vision is to be the ultimate hub for everything
+              At YinYang, our vision is to be the ultimate hub for everything
               related to China, from language learning to cultural understanding.
               Our mission is to cultivate a thriving community of Chinese language
               experts who are equipped to play a pivotal role in shaping the future
               of Indo-China relations.
               As China remains our largest trade partner and a key neighbor, we
-              recognize the growing need for Chinese language experts. Yin Yang
+              recognize the growing need for Chinese language experts. YinYang
               strives to be a powerhouse in cultivating not just language
               proficiency but also a deep understanding of China's culture,
               economy, politics, and societal mindset, preparing our students to

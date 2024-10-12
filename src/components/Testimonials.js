@@ -44,14 +44,14 @@ const Testimonials = () => {
   const testimonialsData = [
     {
       testimonial:
-        "I believe Yin Yang is not just a class but more like a family. Yashodhara ma’am always guides us with scholarships and summer camps. At Yin Yang, we not only learn the language but also immerse ourselves in the culture and everything about China. I even had the opportunity to teach in China because of Yin Yang.",
+        "I believe YinYang is not just a class but more like a family. Yashodhara ma’am always guides us with scholarships and summer camps. At YinYang, we not only learn the language but also immerse ourselves in the culture and everything about China. I even had the opportunity to teach in China because of YinYang.",
       name: "Jui Kahate",
       role: "Teacher",
       image: juiImage,
     },
     {
       testimonial:
-        "Yashodhara ma’am gives exposure to projects, scholarships and other activities to students. All the teachers in Yin Yang are very patient and supportive. I learnt so much from all of them. We also enjoy audio-video material in class. Yin Yang is one of the best classes for Chinese learning.",
+        "Yashodhara ma’am gives exposure to projects, scholarships and other activities to students. All the teachers in YinYang are very patient and supportive. I learnt so much from all of them. We also enjoy audio-video material in class. YinYang is one of the best classes for Chinese learning.",
       name: "Mrunal Shah",
       role: "Student",
       image: mrunalImage,

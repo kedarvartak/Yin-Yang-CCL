@@ -26,7 +26,7 @@ export default function Corporate() {
               className="mt-4 text-gray-600 text-base sm:text-lg font-semibold max-w-2xl"
               style={{ fontFamily: "Quicksand, sans-serif" }}
             >
-              Yin Yang offers business services to help companies succeed in the Chinese market. 
+              YinYang offers business services to help companies succeed in the Chinese market. 
               Our expert team provides translation, interpretation, marketing advice, and support 
               with import-export. With a deep understanding of Chinese business culture, we guide 
               you through market entry and expansion.

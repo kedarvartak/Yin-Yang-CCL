@@ -111,7 +111,7 @@ export default function Gallery() {
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Photo Gallery
-          </h1>
+          </h1> 
         </div>
 
         {/* Gallery Content */}

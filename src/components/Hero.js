@@ -17,7 +17,7 @@ export default function HeroSection() {
           className="text-5xl md:text-7xl text-teal-600 font-bold lg:scale-y-[1.20]"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
-          Discover China the <span className="text-red-500">Yin Yang</span> way.
+          Discover China the <span className="text-red-500">YinYang</span> way.
         </h1>
 
         {/* Subheading */}

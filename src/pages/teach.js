@@ -17,10 +17,10 @@ export default function Teach() {
         {/* Title and Subtitle */}
         <div className="text-left lg:text-left mb-12">
           <h1 className="text-5xl lg:scale-y-[1.20] font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            What we teach at <span className="text-red-600">Yin Yang</span>
+            What we teach at <span className="text-red-600">YinYang</span>
           </h1>
           <p className="text-black text-lg lg:text-xl" style={{ fontFamily: "'Quicksand', sans-serif" }}>
-            At Yin Yang, we teach more than just Mandarin. Our courses cover pronunciation, Chinese characters, history, culture, and business etiquette. Whether you're preparing for HSK exams or just want to improve your conversational skills, we have courses tailored to fit your needs.
+            At YinYang, we teach more than just Mandarin. Our courses cover pronunciation, Chinese characters, history, culture, and business etiquette. Whether you're preparing for HSK exams or just want to improve your conversational skills, we have courses tailored to fit your needs.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function Teach() {
                 Hanyu Shuiping Kaoshi (HSK)
               </h2>
               <p className="text-black text-lg" style={{ fontFamily: "'Quicksand', sans-serif" }}>
-                The Hanyu Shuiping Kaoshi (HSK) is the official Chinese proficiency test, endorsed by Hanban (Chinese Language and cooperation center) and the Chinese Ministry of Education. At Yin Yang, we offer expert preparation for all six levels of the HSK exam.
+                The Hanyu Shuiping Kaoshi (HSK) is the official Chinese proficiency test, endorsed by Hanban (Chinese Language and cooperation center) and the Chinese Ministry of Education. At YinYang, we offer expert preparation for all six levels of the HSK exam.
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function Teach() {
               Hanyu Shuiping Kouyu Kaoshi (HSKK)
             </h2>
             <p className="text-black text-lg lg:text-xl" style={{ fontFamily: "'Quicksand', sans-serif" }}>
-              The Hanyu Shuiping Kouyu Kaoshi (HSKK) is a Chinese proficiency test focused exclusively on speaking. Complementary to the HSK exams, the HSKK assesses oral language skills and is conducted by Yin Yang at three levels.
+              The Hanyu Shuiping Kouyu Kaoshi (HSKK) is a Chinese proficiency test focused exclusively on speaking. Complementary to the HSK exams, the HSKK assesses oral language skills and is conducted by YinYang at three levels.
             </p>
           </div>
 
@@ -161,12 +161,12 @@ export default function Teach() {
         </div>
       </div>
 
-      {/* Yin Yang's Unique Courses Section */}
+      {/* YinYang's Unique Courses Section */}
       <div className="bg-red-600 py-16 relative">
         {/* Title */}
         <div className="text-center mb-12">
           <h2 className="text-5xl scale-y-[1.20] text-white font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Yin Yang's Unique Courses
+            YinYang's Unique Courses
           </h2>
         </div>
 
@@ -239,9 +239,9 @@ export default function Teach() {
             Business Chinese Training (BCT)
           </h2>
           <p className="text-black text-lg lg:text-xl" style={{ fontFamily: "'Quicksand', sans-serif" }}>
-            The BCT (Business Chinese Training) course is designed to equip you with the language skills needed for professional environments. Prepare to excel in the world of Chinese business with our specialized training at Yin Yang.
+            The BCT (Business Chinese Training) course is designed to equip you with the language skills needed for professional environments. Prepare to excel in the world of Chinese business with our specialized training at YinYang.
             <br />    
-            *Yin Yang recommends completing HSK 1 first to build a strong foundation in daily vocabulary.
+            *YinYang recommends completing HSK 1 first to build a strong foundation in daily vocabulary.
           </p>
         </div>
 
@@ -291,7 +291,7 @@ export default function Teach() {
             {/* Right Section: Description */}
             <div className="lg:w-1/2">
               <p className="text-gray-700 mb-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
-                Yin Yang offers the perfect start to mastering Mandarin, even for the youngest learners. The YCT (Youth Chinese Training) course is tailored specifically for children aged 6-12. This 4-level course focuses on daily vocabulary and is designed to make learning Mandarin fun and engaging.
+                YinYang offers the perfect start to mastering Mandarin, even for the youngest learners. The YCT (Youth Chinese Training) course is tailored specifically for children aged 6-12. This 4-level course focuses on daily vocabulary and is designed to make learning Mandarin fun and engaging.
               </p>
               <p className="text-gray-700" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                 By the end of this course, children will not only be familiar with essential vocabulary but also have the skills to confidently navigate various parts of China. Additionally, they will have learned basic calligraphy, enhancing their cultural experience and connection with the language.

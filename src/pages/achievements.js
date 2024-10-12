@@ -127,7 +127,7 @@ export default function AchievementsPage() {
           className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-teal-600 mb-8 text-left"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
-          Other Achievements and Awards for Yin-Yang
+          Other Achievements and Awards for YinYang
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {otherAchievementsData.map((achievement, index) => (

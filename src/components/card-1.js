@@ -105,7 +105,7 @@ export default function UniqueComponent() {
             className="text-red-500 mt-4 md:mt-6 text-base md:text-xl font-semibold mb-4 md:mb-8"
             style={{ fontFamily: 'Quicksand' }}
           >
-            YinYang offers unrivaled expertise in Chinese language and culture. From flexible scheduling to top-notch guidance, we provide everything you need for successful application and comprehensive Chinese experiences.
+            YinYang offers unrivalled expertise in Chinese language and culture. From flexible scheduling to top-notch guidance, we provide everything you need for successful application and comprehensive Chinese experiences.
           </p>
           <div className="flex justify-center">
             

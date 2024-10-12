@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+// src/components/AchievementsPage.js
+import React, { useMemo, useRef, useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import stud from '../components/assets/2 students got award in Chinese Bridge Middle school competetion  april 17.jpg';
@@ -10,7 +11,6 @@ import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import CallButton from '../components/call';
 import { FaAward, FaUniversity, FaUserGraduate, FaGlobeAsia } from 'react-icons/fa';
-
 
 const achievementsData = [
   {
@@ -25,7 +25,7 @@ const achievementsData = [
   },
   {
     id: 2,
-    text: 'Student got 1st price in China India Bridge competition July 18',
+    text: 'Student got 1st prize in China India Bridge competition July 18',
     image: prize,
   },
   {
@@ -107,7 +107,7 @@ const otherAchievementsData = [
     year: 2023,
   },
   {
-    text: 'Aniruddha Joshi, Gayatree Joshi - Philosophy Summer school program at Beijing normal university',
+    text: 'Aniruddha Joshi, Gayatree Joshi - Philosophy Summer school program at Beijing Normal University',
     year: 2023,
   },
   {
@@ -147,8 +147,8 @@ const sortAchievementsDescending = (achievements) => {
 };
 
 export default function AchievementsPage() {
-  // Duplicate the achievements data multiple times for seamless scrolling
-  const duplicatedAchievements = [...achievementsData, ...achievementsData, ...achievementsData];
+  // Duplicate the achievements data once for seamless scrolling
+  const duplicatedAchievements = [...achievementsData, ...achievementsData];
 
   // Memoize the sorted otherAchievementsData to optimize performance
   const sortedOtherAchievements = useMemo(
@@ -168,7 +168,8 @@ export default function AchievementsPage() {
 
       return (
         <>
-          <strong>{names}</strong> {separator} <u>{description}</u>
+          <strong>{names}</strong> {separator}{' '}
+          <span className="underline">{description}</span>
         </>
       );
     }
@@ -176,6 +177,35 @@ export default function AchievementsPage() {
     // If no separator is found, return the text as is
     return text;
   };
+
+  // Ref to the ticker container
+  const tickerRef = useRef(null);
+
+  // State to store the width of the ticker
+  const [tickerWidth, setTickerWidth] = useState(0);
+
+  useEffect(() => {
+    // Function to set the ticker width
+    const updateWidth = () => {
+      if (tickerRef.current) {
+        setTickerWidth(tickerRef.current.scrollWidth / 2);
+      }
+    };
+
+    updateWidth();
+
+    // Add event listener to update width on window resize
+    window.addEventListener('resize', updateWidth);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+    };
+  }, []);
+
+  // Speed factor to control the animation speed
+  const speedFactor = 50; // Adjust this value as needed
+  const animationDuration = tickerWidth ? tickerWidth / speedFactor : 0;
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
@@ -195,7 +225,10 @@ export default function AchievementsPage() {
 
         {/* Carousel Container */}
         <div className="overflow-hidden relative">
-          <div className="flex animate-scroll">
+          <div
+            className="flex animate-scroll"
+            ref={tickerRef}
+          >
             {duplicatedAchievements.map((achievement, index) => (
               <div
                 key={`${achievement.id}-${index}`}
@@ -236,13 +269,18 @@ export default function AchievementsPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {sortedOtherAchievements.map((achievement, index) => (
-            <div key={index} className="bg-gradient-to-r from-teal-50 to-teal-100 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 flex items-start">
+            <div
+              key={index}
+              className="bg-gradient-to-r from-teal-50 to-teal-100 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 flex items-start"
+            >
               <div className="flex-shrink-0 mr-4 mt-1">
                 {achievement.text.includes('scholarship') ? (
                   <FaUniversity className="text-teal-600 text-2xl" />
-                ) : achievement.text.includes('award') || achievement.text.includes('Winner') ? (
+                ) : achievement.text.includes('award') ||
+                  achievement.text.includes('Winner') ? (
                   <FaAward className="text-teal-600 text-2xl" />
-                ) : achievement.text.includes('Program') || achievement.text.includes('exchange') ? (
+                ) : achievement.text.includes('Program') ||
+                  achievement.text.includes('exchange') ? (
                   <FaGlobeAsia className="text-teal-600 text-2xl" />
                 ) : (
                   <FaUserGraduate className="text-teal-600 text-2xl" />
@@ -255,7 +293,9 @@ export default function AchievementsPage() {
                 >
                   {renderAchievementText(achievement.text)}{' '}
                   {achievement.year ? (
-                    <span className="text-teal-600 font-semibold">({achievement.year})</span>
+                    <span className="text-teal-600 font-semibold">
+                      ({achievement.year})
+                    </span>
                   ) : (
                     ''
                   )}
@@ -268,17 +308,17 @@ export default function AchievementsPage() {
 
       {/* Custom Styles for Animation */}
       <style jsx>{`
-        @keyframes scroll {
+        @keyframes scrollAnimation {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-${tickerWidth}px);
           }
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scrollAnimation ${animationDuration}s linear infinite;
           display: flex;
         }
 
@@ -288,23 +328,10 @@ export default function AchievementsPage() {
           animation-play-state: paused;
         }
 
-        /* Adjust animation speed for smaller screens */
-        @media (max-width: 768px) {
-          .animate-scroll {
-            animation: scroll 15s linear infinite;
-          }
-        }
-
         /* Respect user's prefers-reduced-motion setting */
         @media (prefers-reduced-motion: reduce) {
           .animate-scroll {
             animation: none;
-          }
-        }
-
-        @media (max-width: 568px) {
-          .animate-scroll {
-            animation: scroll 5s linear infinite;
           }
         }
       `}</style>

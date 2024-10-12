@@ -71,9 +71,9 @@ const Testimonials = () => {
         {/* First Column */}
         <div className="flex flex-col space-y-8">
           {/* Card 1: Red Background with Title */}
-          <div className="bg-red-600 text-white p-8 md:p-12 shadow-lg rounded-md flex items-center justify-center">
+          <div className="bg-red-600 text-white p-8  md:p-20 shadow-lg rounded-md flex items-center justify-center">
             <h2
-              className="text-5xl md:text-5xl font-semibold text-left lg:text-5xl lg:scale-y-[1.20]"
+              className="text-5xl md:text-5xl  font-semibold text-left lg:text-5xl lg:scale-y-[1.20]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Hear what our students say about us

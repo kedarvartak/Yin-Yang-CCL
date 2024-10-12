@@ -13,9 +13,9 @@ import CallButton from '../components/call';
 function Landing() {
   return (
     <div className="App">
+      <WhatsApp/>
       <Navbar/>
       <HeroSection/>
-      <WhatsApp/>
       <Up/>
       <CallButton/>
       <Card/>

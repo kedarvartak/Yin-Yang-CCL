@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaWhatsapp, FaArrowUp } from 'react-icons/fa'; // Import the icons from React Icons
+import {FaArrowUp } from 'react-icons/fa'; // Import the icons from React Icons
 
 export default function WhatsAppAndScrollToTop() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -32,18 +32,6 @@ export default function WhatsAppAndScrollToTop() {
 
   return (
     <div>
-      {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/11234567890" // Replace with your WhatsApp number
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 z-50"
-        aria-label="Chat on WhatsApp"
-      >
-        <div className="bg-red-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-red-700 transition-colors duration-300">
-          <FaWhatsapp className="text-white w-8 h-8" />
-        </div>
-      </a>
 
       {/* Scroll to Top Button */}
       {showScrollToTop && (

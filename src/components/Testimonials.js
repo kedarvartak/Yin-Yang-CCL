@@ -46,7 +46,7 @@ const Testimonials = () => {
       testimonial:
         "I believe YinYang is not just a class but more like a family. Yashodhara ma’am always guides us with scholarships and summer camps. At YinYang, we not only learn the language but also immerse ourselves in the culture and everything about China. I even had the opportunity to teach in China because of YinYang.",
       name: "Jui Kahate",
-      role: "Teacher",
+      role: "Student and Teacher",
       image: juiImage,
     },
     {
@@ -58,7 +58,7 @@ const Testimonials = () => {
     },
     {
       testimonial:
-        "I have thoroughly enjoyed learning a language like Mandarin that isn’t often learnt in India. In class we never stuck to our textbooks.",
+        "I have thoroughly enjoyed learning a language like Mandarin that isn’t often learnt in India. We do not restrict to just textbooks, we go beyond for learning more effectively.",
       name: "Mugdha Saptarshi",
       role: "Student",
       image: mugdhaImage,
@@ -76,7 +76,7 @@ const Testimonials = () => {
               className="text-5xl md:text-5xl font-semibold text-left lg:text-5xl lg:scale-y-[1.20]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Hear what our clients say about us
+              Hear what our students say about us
             </h2>
           </div>
 

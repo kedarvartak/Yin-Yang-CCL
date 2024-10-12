@@ -25,7 +25,7 @@ const FAQ = () => {
         "At YinYang, we offer HSK certification for those aiming to master Mandarin. If you're not pursuing certification, you can also choose Chinese as an optional language for your HSC board exams, with our tailored programs ensuring your success either way.",
     },
     {
-      question: "How is the language?",
+      question: "What is the language?",
       answer:
         "We teach Mandarin, the official Chinese dialect, ensuring you master the standard language used in both formal and everyday contexts. Chinese is unique and rewarding, featuring pictorial script and tonal elements. At YinYang, we make learning engaging and accessible, guiding you through these distinctive aspects with expert support.",
     },

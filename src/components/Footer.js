@@ -61,9 +61,16 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: "Quicksand, sans-serif" }}>
               Contact
             </h3>
-            <p className="font-semibold text-lg mb-2" style={{ fontFamily: 'Quicksand, sans-serif' }}>
+            
+            {/* Updated Email as Active Link */}
+            <a 
+              href="mailto:yinyangpune@gmail.com" 
+              className="font-semibold text-lg mb-2 text-white hover:underline" 
+              style={{ fontFamily: 'Quicksand, sans-serif' }}
+            >
               yinyangpune@gmail.com
-            </p>
+            </a>
+            
             <p className="font-semibold text-lg mb-2" style={{ fontFamily: 'Quicksand, sans-serif' }}>
               +91 98220 89970
             </p>
@@ -72,7 +79,7 @@ const Footer = () => {
             </p>
             
             {/* Social Media Icons */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-24">
               <a
                 href="https://www.instagram.com/yinyangpune/"
                 target="_blank"

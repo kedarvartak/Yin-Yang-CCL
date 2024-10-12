@@ -20,7 +20,7 @@ export default function Corporate() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-teal-700 mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Corporate <span className="text-black">Services</span>
+              Corporate Services
             </h2>
             <p
               className="mt-4 text-gray-600 text-base sm:text-lg font-semibold max-w-2xl"

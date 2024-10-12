@@ -1,8 +1,11 @@
+// src/pages/Crisis.jsx
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
-export default function crisis() {
+export default function Crisis() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -12,11 +15,24 @@ export default function crisis() {
         <section className="bg-gray-100 py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl font-bold text-teal-600 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h1
+                className="text-4xl sm:text-5xl font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 China’s Evolving Demographic Crisis
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600" style={{ fontFamily: 'Quicksand' }}>
+              <p
+                className="text-lg sm:text-xl text-gray-600 mb-4"
+                style={{ fontFamily: 'Quicksand' }}
+              >
                 Understanding the impact of China's population decline and its global implications.
+              </p>
+              {/* Author Information */}
+              <p
+                className="text-sm sm:text-base text-gray-700 italic"
+                style={{ fontFamily: 'Quicksand' }}
+              >
+                Author: Omkar Bhole
               </p>
             </div>
           </div>
@@ -26,7 +42,10 @@ export default function crisis() {
         <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="container mx-auto max-w-5xl">
             <article className="prose lg:prose-xl mx-auto text-gray-700">
-              <h2 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h2
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 China’s population in numbers
               </h2>
               <p>
@@ -36,7 +55,10 @@ export default function crisis() {
                 In 2022, China’s birth rate fell to 6.77 per 1000 people, the lowest since 1949, resulting in only 9.56 million births, a 10% decrease from the previous year. Simultaneously, China’s death rate rose to 7.37 per 1000 people, with 10.41 million deaths recorded, highlighting a significant demographic shift.
               </p>
 
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 Causes of China’s population decline
               </h3>
               <p>
@@ -46,7 +68,10 @@ export default function crisis() {
                 The societal shift towards small families, high living costs, career-oriented women delaying childbirth, and ideological differences about family systems also contribute to the declining birth rate. Cities like Shanghai, Guangzhou, and Shenzhen are some of the costliest cities globally, where young professionals face work pressures that discourage large families.
               </p>
 
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 Impact of demographic changes
               </h3>
               <p>
@@ -56,7 +81,10 @@ export default function crisis() {
                 In response, China has adopted measures such as delaying the retirement age and emphasizing technological innovation to compensate for the shrinking workforce. These demographic shifts are reshaping China’s economic strategies, pushing the nation to focus on scientific and technological advancements.
               </p>
 
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 What does it mean for India
               </h3>
               <p>
@@ -65,6 +93,19 @@ export default function crisis() {
               <p>
                 India must avoid the pitfalls that China faced while reaping the benefits of a young, cheap labor force. By carefully navigating these demographic changes, India has the potential to secure long-term economic prosperity.
               </p>
+
+              {/* Back to Blogs Button */}
+              <div className="text-center mt-8">
+                <Link to="/blogs">
+                  <button
+                    className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                    style={{ fontFamily: 'Quicksand' }}
+                    aria-label="Back to Blogs"
+                  >
+                    Back to Blogs
+                  </button>
+                </Link>
+              </div>
             </article>
           </div>
         </section>

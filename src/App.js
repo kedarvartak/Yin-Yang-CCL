@@ -17,11 +17,13 @@ import Marthree from "./pages/blog-marathi-3";
 import Marfour from "./pages/blog-marathi-4";
 import Crisis from "./pages/crisis-blog";
 import Political from "./pages/political-blog"
-import Secure from "./pages/secure-blog"; 
+import Secure from "./pages/secure-blog";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/blogs" element={<Blogs />} />

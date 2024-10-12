@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import stud from '../components/assets/2 students got award in Chinese Bridge Middle school competetion  april 17.jpg';
 import prize from '../components/assets/Student got 1st price in china india bridge competetion July 18.jpg';
-import team from '../components/assets/team.png'
-import inter from '../components/assets/inter.jpg'
-import chancellor from '../components/assets/chancellor.jpg'
+import team from '../components/assets/team.png';
+import inter from '../components/assets/inter.jpg';
+import chancellor from '../components/assets/chancellor.jpg';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import CallButton from '../components/call';
+import { FaAward, FaUniversity, FaUserGraduate, FaGlobeAsia } from 'react-icons/fa';
+
 
 const achievementsData = [
   {
@@ -16,7 +18,6 @@ const achievementsData = [
     text: 'Our founder Mrs. Yashodhara Gadgil proudly serves as the official interpreter between the mayors of Pune and China, fostering global connections and collaboration.',
     image: chancellor,
   },
-
   {
     id: 1,
     text: '2 students got award in Chinese Bridge Middle school competition April 17',
@@ -37,48 +38,152 @@ const achievementsData = [
     text: 'Established partnerships with international educational institutions.',
     image: inter,
   },
-  
-  
 ];
 
-// Additional Achievements and Awards Data
+// Refactored Other Achievements and Awards Data with Year Information
 const otherAchievementsData = [
-  'Viral Shah – One-year scholarship to study Chinese language at Zhengzhou Normal University – 2017-18',
-  'Vrushali Pirangute – One-year scholarship to study Chinese language at Zhengzhou Normal University – 2017-18',
-  'Ishani Kotwal, Spruha Kulkarni, Ashwini Savargaonkar, Gouri Pendse, Kalyani Agashe, Poorvshri Pendse – International volunteers at Jinhua homestay project 2017',
-  'Shreya Ranade – Shanghai Theatre Academy scholarship – 2017',
-  'Ankita Vikhankar – One Belt One Road scholarship – 2017',
-  'Madhura Gokhale, Prabhavati Inamdar, Shraddha Warde, Chandrika Kanetkar, Shreya Ranade – Teachers Training Program at East China University – 2017',
-  'Eepsita Kelkar, Malvika Chavan – Culture exchange program for China bridge at Kunming University - 2017',
-  'Ishani Kotwal - Shanghai Theatre Academy scholarship – 2018',
-  'Tanmay Salvekar – Contestant for International round, middle school China Bridge Competition at Beijing & Kunming University – 2018, received 6 month scholarship for advanced Chinese study',
-  'Shreya Ranade – One-year scholarship to study Chinese language at Nanjing Normal University – 2018-19',
-  'Shreya Ranade – 4 years scholarship for graduation in Chinese language and literature 2019-2023',
-  'Neha Kulkarni – Winner India round, middle school China Bridge Competition 2020',
-  'Jui Kahate - Winner India round, middle school China Bridge Competition 2021 - received 6 months scholarship for advanced Chinese study',
-  'Ishani Kotwal, Omkar Bhole, Anuprita Lele, Jui Kahate, Gaytree Joshi, Vaibhavi Gosavi, Mrunal Shah, Anup Dravid – Beijing Normal University’s Philosophy Summer School Program – 2021',
-  'Gaytree Joshi – Winter program by Beijing Normal University – 2021 & 2022',
-  'Arya Satoskar - Shanghai Theatre Academy scholarship – 2023',
-  'Aniruddha Joshi, Gayatree Joshi -Philosophy Summer school program at Beijing normal university – 2023',
-  'Tanisha Jadhav - Contestant for International round, middle school China Bridge Competition at Beijing, Dali & Kunming University – 2023, received 6 months scholarship for advanced Chinese study',
-  'Neha Kulkarni, Aryaa Bagade – Winner talent award, China bridge India round 2023',
-  'Gaytree Joshi, Saee Vaidya - Shanghai Theatre Academy scholarship – 2024',
-  'Shivani Oak - Philosophy Summer school program at Beijing Normal University – 2024',
-  'Juee Vaidya - Contestant for International round, middle school China Bridge Competition at Beijing & Tianjin University – 2024, received 6 months scholarship for advanced Chinese study',
-  'Arya Bagade - One-year scholarship to study Chinese language at Beijing Language & Culture University – 2024-25',
-  'Yashodhara – International volunteer at Jinhua Homestay Project 2015, Philosophy Summer school program at Beijing Normal University – 2016, Teachers Training Program at East China University – 2017',
+  {
+    text: 'Viral Shah – One-year scholarship to study Chinese language at Zhengzhou Normal University',
+    year: 2018,
+  },
+  {
+    text: 'Vrushali Pirangute – One-year scholarship to study Chinese language at Zhengzhou Normal University',
+    year: 2018,
+  },
+  {
+    text: 'Ishani Kotwal, Spruha Kulkarni, Ashwini Savargaonkar, Gouri Pendse, Kalyani Agashe, Poorvshri Pendse – International volunteers at Jinhua homestay project',
+    year: 2017,
+  },
+  {
+    text: 'Shreya Ranade – Shanghai Theatre Academy scholarship',
+    year: 2017,
+  },
+  {
+    text: 'Ankita Vikhankar – One Belt One Road scholarship',
+    year: 2017,
+  },
+  {
+    text: 'Madhura Gokhale, Prabhavati Inamdar, Shraddha Warde, Chandrika Kanetkar, Shreya Ranade – Teachers Training Program at East China University',
+    year: 2017,
+  },
+  {
+    text: 'Eepsita Kelkar, Malvika Chavan – Culture exchange program for China bridge at Kunming University',
+    year: 2017,
+  },
+  {
+    text: 'Ishani Kotwal - Shanghai Theatre Academy scholarship',
+    year: 2018,
+  },
+  {
+    text: 'Tanmay Salvekar – Contestant for International round, middle school China Bridge Competition at Beijing & Kunming University – received 6 month scholarship for advanced Chinese study',
+    year: 2018,
+  },
+  {
+    text: 'Shreya Ranade – One-year scholarship to study Chinese language at Nanjing Normal University',
+    year: 2019,
+  },
+  {
+    text: 'Shreya Ranade – 4 years scholarship for graduation in Chinese language and literature',
+    year: 2023,
+  },
+  {
+    text: 'Neha Kulkarni – Winner India round, middle school China Bridge Competition',
+    year: 2020,
+  },
+  {
+    text: 'Jui Kahate - Winner India round, middle school China Bridge Competition - received 6 months scholarship for advanced Chinese study',
+    year: 2021,
+  },
+  {
+    text: 'Ishani Kotwal, Omkar Bhole, Anuprita Lele, Jui Kahate, Gaytree Joshi, Vaibhavi Gosavi, Mrunal Shah, Anup Dravid – Beijing Normal University’s Philosophy Summer School Program',
+    year: 2021,
+  },
+  {
+    text: 'Gaytree Joshi – Winter program by Beijing Normal University',
+    year: 2022,
+  },
+  {
+    text: 'Arya Satoskar - Shanghai Theatre Academy scholarship',
+    year: 2023,
+  },
+  {
+    text: 'Aniruddha Joshi, Gayatree Joshi - Philosophy Summer school program at Beijing normal university',
+    year: 2023,
+  },
+  {
+    text: 'Tanisha Jadhav - Contestant for International round, middle school China Bridge Competition at Beijing & Tianjin University – received 6 months scholarship for advanced Chinese study',
+    year: 2023,
+  },
+  {
+    text: 'Neha Kulkarni, Aryaa Bagade – Winner talent award, China bridge India round',
+    year: 2023,
+  },
+  {
+    text: 'Gaytree Joshi, Saee Vaidya - Shanghai Theatre Academy scholarship',
+    year: 2024,
+  },
+  {
+    text: 'Shivani Oak - Philosophy Summer school program at Beijing Normal University',
+    year: 2024,
+  },
+  {
+    text: 'Juee Vaidya - Contestant for International round, middle school China Bridge Competition at Beijing & Tianjin University – received 6 months scholarship for advanced Chinese study',
+    year: 2024,
+  },
+  {
+    text: 'Arya Bagade - One-year scholarship to study Chinese language at Beijing Language & Culture University',
+    year: 2024,
+  },
+  {
+    text: 'Yashodhara Gadgil – International volunteer at Jinhua Homestay Project 2015, Philosophy Summer school program at Beijing Normal University – 2016, Teachers Training Program at East China University',
+    year: 2017, // Latest year in the entry
+  },
 ];
+
+// Function to sort achievements in descending order based on year
+const sortAchievementsDescending = (achievements) => {
+  // Create a shallow copy to avoid mutating the original array
+  return [...achievements].sort((a, b) => b.year - a.year);
+};
 
 export default function AchievementsPage() {
-  // Duplicate the achievements data for seamless scrolling
-  const duplicatedAchievements = [...achievementsData, ...achievementsData];
+  // Duplicate the achievements data multiple times for seamless scrolling
+  const duplicatedAchievements = [...achievementsData, ...achievementsData, ...achievementsData];
+
+  // Memoize the sorted otherAchievementsData to optimize performance
+  const sortedOtherAchievements = useMemo(
+    () => sortAchievementsDescending(otherAchievementsData),
+    []
+  );
+
+  // Function to render achievement text with bolded names and underlined achievements
+  const renderAchievementText = (text) => {
+    // Split the text at the first occurrence of '–' or '-'
+    const separator = text.includes('–') ? '–' : '-';
+    const parts = text.split(separator);
+
+    if (parts.length >= 2) {
+      const names = parts[0].trim();
+      const description = parts.slice(1).join(separator).trim();
+
+      return (
+        <>
+          <strong>{names}</strong> {separator} <u>{description}</u>
+        </>
+      );
+    }
+
+    // If no separator is found, return the text as is
+    return text;
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      <WhatsApp/>
-      <WhatsAppAndScrollToTop/>
+      <WhatsApp />
+      <WhatsAppAndScrollToTop />
       <Navbar />
-      <CallButton/>
+      <CallButton />
+
       {/* Achievements Carousel Section */}
       <div className="container mx-auto px-6 py-16 flex-grow">
         <h2
@@ -101,7 +206,7 @@ export default function AchievementsPage() {
                   <img
                     src={achievement.image}
                     alt={`Achievement ${achievement.id} - ${achievement.text}`}
-                    className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-t-3xl"
+                    className="w-full object-contain rounded-t-3xl"
                     loading="lazy"
                   />
 
@@ -130,14 +235,32 @@ export default function AchievementsPage() {
           Other Achievements and Awards for YinYang
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {otherAchievementsData.map((achievement, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6">
-              <p
-                className="text-gray-700 text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Quicksand, sans-serif' }}
-              >
-                {achievement}
-              </p>
+          {sortedOtherAchievements.map((achievement, index) => (
+            <div key={index} className="bg-gradient-to-r from-teal-50 to-teal-100 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 flex items-start">
+              <div className="flex-shrink-0 mr-4 mt-1">
+                {achievement.text.includes('scholarship') ? (
+                  <FaUniversity className="text-teal-600 text-2xl" />
+                ) : achievement.text.includes('award') || achievement.text.includes('Winner') ? (
+                  <FaAward className="text-teal-600 text-2xl" />
+                ) : achievement.text.includes('Program') || achievement.text.includes('exchange') ? (
+                  <FaGlobeAsia className="text-teal-600 text-2xl" />
+                ) : (
+                  <FaUserGraduate className="text-teal-600 text-2xl" />
+                )}
+              </div>
+              <div>
+                <p
+                  className="text-gray-800 text-sm sm:text-base md:text-lg"
+                  style={{ fontFamily: 'Quicksand, sans-serif' }}
+                >
+                  {renderAchievementText(achievement.text)}{' '}
+                  {achievement.year ? (
+                    <span className="text-teal-600 font-semibold">({achievement.year})</span>
+                  ) : (
+                    ''
+                  )}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -155,12 +278,34 @@ export default function AchievementsPage() {
         }
 
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 20s linear infinite;
+          display: flex;
         }
 
-        /* Pause animation on hover */
-        .animate-scroll:hover {
+        /* Pause animation on hover or focus */
+        .animate-scroll:hover,
+        .animate-scroll:focus-within {
           animation-play-state: paused;
+        }
+
+        /* Adjust animation speed for smaller screens */
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation: scroll 15s linear infinite;
+          }
+        }
+
+        /* Respect user's prefers-reduced-motion setting */
+        @media (prefers-reduced-motion: reduce) {
+          .animate-scroll {
+            animation: none;
+          }
+        }
+
+        @media (max-width: 568px) {
+          .animate-scroll {
+            animation: scroll 5s linear infinite;
+          }
         }
       `}</style>
 

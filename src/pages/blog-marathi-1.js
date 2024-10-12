@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 export default function Marone() {
   return (
@@ -12,11 +13,24 @@ export default function Marone() {
         <section className="bg-gray-100 py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl font-bold text-teal-600 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h1
+                className="text-4xl sm:text-5xl font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 चिनी भाषा कोणी शिकावी व परीक्षांबद्दलची माहिती
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600" style={{ fontFamily: 'Quicksand' }}>
+              <p
+                className="text-lg sm:text-xl text-gray-600 mb-4"
+                style={{ fontFamily: 'Quicksand' }}
+              >
                 चीनी भाषा शिकण्यासाठी आवश्यक माहिती आणि प्राविण्याच्या परीक्षांविषयी तपशील.
+              </p>
+              {/* Author Information */}
+              <p
+                className="text-sm sm:text-base text-gray-700 italic"
+                style={{ fontFamily: 'Quicksand' }}
+              >
+                लेखक: Yashodhara Gadgil
               </p>
             </div>
           </div>
@@ -26,13 +40,19 @@ export default function Marone() {
         <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="container mx-auto max-w-5xl">
             <article className="prose lg:prose-xl mx-auto text-gray-700">
-              <h2 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h2
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 भाषा शिकण्यासाठी योग्य वेळ कोणती?
               </h2>
               <p>
                 भाषा शिकण्यासाठी खरंतर वयाची कोणतीच अट नसते. परदेशी भाषा शिकताना प्रत्येक जणच त्या भाषेच्या बालवाडीत असतो. अंक, फळे-फुले, रंग यासाठीचे शब्द सर्वच वयोगटातील विद्यार्थी सुरुवातीला शिकतात. हळूहळू त्यात आवश्यक शब्दांच्या गरजेनुसार फरक पडत जातो.
               </p>
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 चिनी भाषेचे विशेष गुण
               </h3>
               <p>
@@ -42,14 +62,20 @@ export default function Marone() {
                 लहान मुलांना टीव्हीवरच्या जाहिराती चटकन पाठ होतात. चिनी भाषा ही टोनल असल्याने त्यातील उच्चारातील हेलकावे लहान मुले पटकन लक्षात ठेवतात आणि भाषा पटकन बोलता येते.
               </p>
 
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 वय आणि अनुभव
               </h3>
               <p>
                 अनेक व्यावसायिक कामानिमित्त चीनमध्ये जात असतात आणि तिथे चिनी भाषा कानावर पडल्याने ते लवकर रिलेट करू शकतात. तसेच चिनी सरकार सर्व वयोगटांसाठी वेगवेगळ्या प्राविण्य परीक्षा आयोजित करते.
               </p>
 
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 चिनी भाषेच्या परीक्षा
               </h3>
               <p>
@@ -59,7 +85,10 @@ export default function Marone() {
                 चिनी भाषेत एक ते तीन या एच एस के पातळ्या आहेत, ज्यात तोंडी आणि लेखी परीक्षा दिल्या जातात. त्यानंतर, ज्यांना व्यावसायिक स्तरावर चीनी भाषेचे ज्ञान हवे असते, ते बिझनेस चायनीज टेस्ट देऊ शकतात.
               </p>
 
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 शिष्यवृत्ती आणि अभ्यासक्रम
               </h3>
               <p>
@@ -69,12 +98,28 @@ export default function Marone() {
                 या शिष्यवृत्तीच्या माध्यमातून, चिनी विद्यापीठे उन्हाळ्यात दोन-तीन आठवड्यांची शिबिरे आयोजित करतात ज्यात चिनी संस्कृती आणि भाषेचे शिक्षण दिले जाते.
               </p>
 
-              <h3 className="font-bold text-teal-600" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3
+                className="font-bold text-teal-600 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 विदर्भ-मराठवाड्यातील परिस्थिती
               </h3>
               <p>
                 सध्या विदर्भ मराठवाडा येथील विद्यार्थ्यांमध्ये चीनमध्ये जाऊन तेथे मेडिकलचे शिक्षण घेण्याचा कल खूप वाढला आहे. मात्र, ज्या विद्यार्थ्यांना इंग्रजीचे पुरेसे ज्ञान नाही, त्यांच्याकडून इंग्रजी मधून शिकणे योग्य आहे का याचा विचार करणे आवश्यक आहे.
               </p>
+
+              {/* Back to Blogs Button */}
+              <div className="text-center mt-8">
+                <Link to="/blogs">
+                  <button
+                    className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                    style={{ fontFamily: 'Quicksand' }}
+                    aria-label="Back to Blogs"
+                  >
+                    Back to Blogs
+                  </button>
+                </Link>
+              </div>
             </article>
           </div>
         </section>

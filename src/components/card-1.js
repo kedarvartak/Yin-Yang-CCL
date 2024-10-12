@@ -12,7 +12,7 @@ function Card({ title, description, span = false }) {
       } flex flex-col h-full w-full`}
     >
       {/* Logo and Title Container */}
-      <div className="flex items-center mb-2 md:mb-4">
+      <div className="flex items-center mt-2  md:mb-4">
         {/* Logo Placeholder */}
         <img src={logo} alt={`${title} Logo`} className="w-10 h-10 md:w-15 md:h-15 mr-2 md:mr-4" />
         {/* Title */}
@@ -38,7 +38,7 @@ export default function UniqueComponent() {
     {
       title: "Exclusive Teaching",
       description:
-        "At YinYang, we focus exclusively on teaching Chinese, ensuring a specialized and immersive learning experience tailored to your needs.",
+        "At YinYang, we focus exclusively on teaching Chinese, ensuring a specialized and immersive learning experience tailored to your needs.  Our curriculum is designed to offer practical, real-world language skills, helping you gain confidence in both spoken and written Chinese.  With personalized lessons and dedicated instructors, we ensure your learning journey is efficient, engaging, and culturally enriching.",
       span: true, // This card spans two columns on md screens
     },
     {
@@ -80,7 +80,7 @@ export default function UniqueComponent() {
     {
       title: "Global Perspective",
       description:
-        "Broaden your geopolitical understanding by engaging in discussions on current events and trade agreements. This helps deepen your skills in Chinese language and world affairs.",
+        "Broaden your geopolitical understanding by engaging in discussions on current events and trade agreements. This helps deepen your skills in Chinese language and world affairs.  Gain valuable insights into China's role in the global economy, fostering a well-rounded perspective on international relations and commerce.  Stay ahead by mastering the language of one of the world's most influential nations.",
       span: true, // This card spans two columns on md screens
     },
   ];

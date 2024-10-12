@@ -12,18 +12,18 @@ import anu from '../components/assets/Anuprita Lele.png';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import shivani from '../components/assets/shivani oak.jpeg';
-import gayatree from '../components/assets/gayatree joshi.jpeg'
+import gayatree from '../components/assets/gayatree joshi.jpeg';
 import CallButton from '../components/call';
+import kanade from '../components/assets/kanade.jpg'
 
-// Placeholder images for team members without local assets
-const placeholderImage = 'https://via.placeholder.com/150x200';
+
 
 export default function About() {
   // Define the team members data
   const teamMembers = [
     {
       name: 'Col. Kiran Kanade (Retd.)',
-      image: placeholderImage, // Replace with actual image path if available
+      image: kanade, // Replace with actual image path if available
       roles: [
         "Master's in Chinese Language",
         'Translator & Interpreter for the Indian Government',
@@ -128,9 +128,10 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <WhatsApp/>
-      <CallButton/>
-      <WhatsAppAndScrollToTop/>
+      <WhatsApp />
+      <CallButton />
+      <WhatsAppAndScrollToTop />
+      
       {/* About Section */}
       <div className="container mx-auto py-16 px-4 lg:px-0">
         {/* Title */}
@@ -155,7 +156,8 @@ export default function About() {
           </div>
 
           {/* Right Section: Text */}
-          <div className="w-full lg:w-2/3 flex flex-col justify-between">
+          <div className="w-full lg:w-2/3 flex flex-col justify-between px-4 sm:px-6 lg:px-0">
+            {/* Added `px-4 sm:px-6` for increased padding on mobile and small screens */}
             <div>
               <p
                 className="text-gray-700 text-justify leading-8 mb-4"
@@ -213,7 +215,7 @@ export default function About() {
       <div className="container mx-auto py-16 px-4 lg:px-0">
         {/* Team Title */}
         <h2
-          className="text-5xl sm:text-5xl lg:text-6xl font-bold text-teal-600 text-left sm:text-left lg:text-left mb-12"
+          className="text-5xl sm:text-5xl lg:text-6xl font-bold text-teal-600 text-center sm:text-center lg:text-left mb-12"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Our Team
@@ -238,7 +240,7 @@ export default function About() {
 
               {/* Team Member Name */}
               <h3
-                className="text-xl font-semibold mb-2 text-left sm:text-center"
+                className="text-xl font-semibold mb-2 text-center sm:text-center"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {member.name}

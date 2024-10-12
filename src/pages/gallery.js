@@ -13,6 +13,9 @@ import play from '../components/assets/play.jpg';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import CallButton from '../components/call';
+import gallery from '../components/assets/trip.jpg'
+import gallery2 from '../components/assets/trip2.jpg'
+import gallery3 from '../components/assets/trip3.jpg'
 
 export default function Gallery() {
   const galleryImages = [
@@ -22,6 +25,9 @@ export default function Gallery() {
     { src: school2, alt: 'Gallery Image 2' },
     { src: baal, alt: 'Gallery Image 2' },
     { src: play, alt: 'Gallery Image 2' },
+    { src: gallery, alt: 'Gallery Image 2' },
+    { src: gallery2, alt: 'Gallery Image 2' },
+    { src: gallery3, alt: 'Gallery Image 2' },
   ];
 
   return (

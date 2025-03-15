@@ -117,7 +117,7 @@ export default function UniqueComponent() {
             application and comprehensive Chinese experiences.
           </p>
         </div>
-
+        {/* map */}
         {/* Right Column */}
         <div className="md:col-span-2 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 auto-rows-auto">

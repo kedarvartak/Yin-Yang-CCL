@@ -154,7 +154,7 @@ export default function Associates() {
           }
         }
       `}</style>
-
+      {/* map */}
       {/* Ticker 1 */}
       <div className="ticker-wrapper mb-8">
         <div

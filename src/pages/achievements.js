@@ -230,6 +230,7 @@ export default function AchievementsPage() {
             className="flex animate-scroll"
             ref={tickerRef}
           >
+            {/* map */}
             {duplicatedAchievements.map((achievement, index) => (
               <div
                 key={`${achievement.id}-${index}`}

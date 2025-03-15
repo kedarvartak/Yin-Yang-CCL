@@ -1,5 +1,6 @@
 // src/components/HeroSection.js
 import React from 'react';
+// xml markup
 
 export default function HeroSection() {
   return (

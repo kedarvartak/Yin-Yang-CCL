@@ -54,7 +54,7 @@ export default function About() {
       ],
     },
     {
-      name: 'Omkar Bole',
+      name: 'Omkar Bhole',
       image: bhole,
       roles: [
         "Master's in China Studies",

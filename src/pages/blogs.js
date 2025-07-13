@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
 import { Link } from 'react-router-dom';
-import CallButton from '../components/call';
 import dood from '../components/assets/dood.png'; // Import the single doodle image
 
 const blogs = [
@@ -57,6 +56,13 @@ const blogs = [
     link: '/Marone',
     author: 'Yashodhara Gadgil',
   },
+  {
+    title: 'रामायणाचे चीनी आयाम',
+    description:
+      'लेनिनने सांगितल्याप्रमाणे, जो माणूस मानव जातीने निर्माण केलेले साहित्य स्वतःचे ज्ञान समृद्ध करण्याबरोबर साम्यवादी समाज घडवण्यासाठी करतो तो खरा कम्युनिस्ट',
+    link: '/Marfive',
+    author: 'Yashodhara Gadgil',
+  },
 ];
 
 export default function Blogs() {
@@ -65,7 +71,6 @@ export default function Blogs() {
       <WhatsApp />
       <WhatsAppAndScrollToTop />
       <Navbar />
-      <CallButton />
       <main className="flex-grow px-4 sm:px-6 md:px-8 lg:px-12 mb-16 py-8">
         {/* Blogs Title */}
         <div className="mb-10">

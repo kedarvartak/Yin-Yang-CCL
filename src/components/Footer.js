@@ -1,10 +1,11 @@
 // src/components/Footer.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
-
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
+  const mapsUrl = "https://www.google.com/maps/place/18%C2%B030'23.6%22N+73%C2%B049'43.1%22E/@18.5066704,73.8273395,18.04z/data=!4m4!3m3!8m2!3d18.5065632!4d73.8286362?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D";
+
   return (
     <footer className="bg-red-600 text-white py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +54,6 @@ const Footer = () => {
                   </Link>
                 </div>
               </li>
-              
             </ul>
           </div>
           
@@ -75,9 +75,28 @@ const Footer = () => {
             <p className="font-semibold text-lg mb-2" style={{ fontFamily: 'Quicksand, sans-serif' }}>
               +91 98220 89970
             </p>
-            <p className="font-semibold text-lg mb-6" style={{ fontFamily: 'Quicksand, sans-serif' }}>
-              Office No. 6, 1st floor, Banali Apartments, Nalstop, Karve Road, Pune 411004
-            </p>
+
+            {/* Address with Google Maps Link */}
+            <div className="flex items-start gap-2 mb-6 group">
+              <a 
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-lg hover:underline" 
+                style={{ fontFamily: 'Quicksand, sans-serif' }}
+              >
+                1st Floor, Prabhukrupa, Plot No. 2/5, Opposite SNDT College, Behind SBI Erandwane Branch, Off Karve Road, Pune, 411004.
+              </a>
+              <a 
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-800 p-2 rounded-full hover:bg-red-900 transition flex-shrink-0 group-hover:bg-red-900"
+                aria-label="View on Google Maps"
+              >
+                <FaMapMarkerAlt className="text-white" size={20} />
+              </a>
+            </div>
             
             {/* Social Media Icons */}
             <div className="flex space-x-4 mb-24">
@@ -108,7 +127,6 @@ const Footer = () => {
               >
                 <FaWhatsapp className="text-white" size={20} />
               </a>
-              {/* New Facebook Icon */}
               <a
                 href="https://www.facebook.com/yinyangpune/"
                 target="_blank"
@@ -120,7 +138,6 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
         </div>
       </div>
     </footer>

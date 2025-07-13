@@ -39,6 +39,10 @@ export default function Navbar() {
             <Link to="/">Home</Link>
           </li>
 
+          <li className="hover:text-red-700 cursor-pointer">
+            <Link to="/About">About</Link>
+          </li>
+
           {/* Chinese Language Courses Dropdown */}
           <li
             className="relative group"
@@ -96,10 +100,6 @@ export default function Navbar() {
           <li className="hover:text-red-700 cursor-pointer">
             <Link to="/blogs">Blog</Link>
           </li>
-
-          <li className="hover:text-red-700 cursor-pointer">
-            <Link to="/About">About</Link>
-          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -155,6 +155,12 @@ export default function Navbar() {
             <li className="hover:text-red-700 cursor-pointer">
               <Link to="/" onClick={handleLinkClick}>
                 Home
+              </Link>
+            </li>
+
+            <li className="hover:text-red-700 cursor-pointer">
+              <Link to="/about" onClick={handleLinkClick}>
+                About
               </Link>
             </li>
 
@@ -222,12 +228,6 @@ export default function Navbar() {
             <li className="hover:text-red-700 cursor-pointer">
               <Link to="/blogs" onClick={handleLinkClick}>
                 Blog
-              </Link>
-            </li>
-
-            <li className="hover:text-red-700 cursor-pointer">
-              <Link to="/about" onClick={handleLinkClick}>
-                About
               </Link>
             </li>
           </ul>

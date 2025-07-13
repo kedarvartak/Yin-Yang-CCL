@@ -8,7 +8,6 @@ import VisionMission from '../components/Vision';
 import Card from '../components/card-1';
 import WhatsApp from '../components/whatsapp';
 import Up from '../components/goUP';
-import CallButton from '../components/call';
 import banner from '../components/assets/banner.jpg'
 function Landing() {
   return (
@@ -24,7 +23,6 @@ function Landing() {
       </div>
       <HeroSection/>
       <Up/>
-      <CallButton/>
       <Card/>
       <VisionMission/>
       <Testimonials/>

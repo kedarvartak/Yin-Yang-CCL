@@ -3,14 +3,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
-import CallButton from '../components/call';
 
 export default function Teach() {
   return (
     <div>
       <Navbar />
       <WhatsApp />
-      <CallButton />
       <WhatsAppAndScrollToTop />
       
       {/* Main Container */}
@@ -595,6 +593,120 @@ export default function Teach() {
             </div>
           </div>
         </div> 
+      </div>
+
+      {/* Certificate Course Section */}
+      <div className="container mx-auto py-16 px-4 lg:px-0">
+        {/* Title and Description */}
+        <div className="text-left lg:text-left mb-12">
+          <h2
+            className="text-5xl scale-y-[1.20] font-bold text-red-600 mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Certificate Course
+          </h2>
+          <p
+            className="text-black text-lg lg:text-xl"
+            style={{ fontFamily: "'Quicksand', sans-serif" }}
+          >
+            Our comprehensive certificate program combines HSK preparation with practical language skills and cultural understanding. Perfect for students seeking a well-rounded foundation in Mandarin Chinese.
+          </p>
+        </div>
+
+        {/* Certificate Course Details Card */}
+        <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl shadow-2xl overflow-hidden">
+          <div className="p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Course Content */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <h3
+                  className="text-3xl scale-y-[1.20] font-bold text-white mb-4"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Course Content
+                </h3>
+                <div
+                  className="text-white text-lg space-y-2"
+                  style={{ fontFamily: "'Quicksand', sans-serif" }}
+                >
+                  <p>• HSK 1 & 2 Complete Curriculum</p>
+                  <p>• Additional 200 Vocabulary Words</p>
+                  <p>• Practical Conversation Skills</p>
+                </div>
+              </div>
+
+              {/* Duration */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <h3
+                  className="text-3xl scale-y-[1.20] font-bold text-white mb-4"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Duration
+                </h3>
+                <div
+                  className="text-white text-lg"
+                  style={{ fontFamily: "'Quicksand', sans-serif" }}
+                >
+                  <p className="text-2xl font-bold mb-2">1 Semester</p>
+                  <p>120 Hours of Comprehensive Training</p>
+                  <p className="mt-2">Flexible Schedule Options Available</p>
+                </div>
+              </div>
+
+              {/* Skills Covered */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <h3
+                  className="text-3xl scale-y-[1.20] font-bold text-white mb-4"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Skills Covered
+                </h3>
+                <div
+                  className="grid grid-cols-2 gap-2 text-white text-lg"
+                  style={{ fontFamily: "'Quicksand', sans-serif" }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <span>•</span>
+                    <span>Pronunciation</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span>•</span>
+                    <span>Reading</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span>•</span>
+                    <span>Writing</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span>•</span>
+                    <span>Speaking</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span>•</span>
+                    <span>Listening</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span>•</span>
+                    <span>Cultural Literacy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Enroll CTA */}
+            <div className="mt-8 text-center">
+              <a
+                href="https://wa.me/919822089970"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-red-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-50 transition duration-300"
+                style={{ fontFamily: "'Quicksand', sans-serif" }}
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Customized College Programs Section with Added Margins */}

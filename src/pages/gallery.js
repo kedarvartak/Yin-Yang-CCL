@@ -13,7 +13,6 @@ import baal from '../components/assets/Bal Bharati Std. 11 book Release July 19.
 import play from '../components/assets/play.jpg';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
-import CallButton from '../components/call';
 import gallery from '../components/assets/trip.jpg';
 import gallery2 from '../components/assets/trip2.jpg';
 import gallery3 from '../components/assets/trip3.jpg';
@@ -47,7 +46,6 @@ export default function Gallery() {
       <Navbar />
       <WhatsApp />
       <WhatsAppAndScrollToTop />
-      <CallButton />
       <main className="flex-grow px-4 sm:px-6 md:px-10 mb-12">
         {/* Press & Media Section */}
         <div className="p-4 sm:p-6 mt-12 space-y-6">

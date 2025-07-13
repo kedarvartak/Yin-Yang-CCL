@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
-import CallButton from '../components/call';
 
 export default function Corporate() {
   return (
@@ -11,7 +10,6 @@ export default function Corporate() {
       <Navbar />
       <WhatsApp/>
       <WhatsAppAndScrollToTop/>
-      <CallButton/>
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}

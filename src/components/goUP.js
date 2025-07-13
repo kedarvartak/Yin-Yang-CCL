@@ -32,12 +32,11 @@ export default function WhatsAppAndScrollToTop() {
 
   return (
     <div>
-
       {/* Scroll to Top Button */}
       {showScrollToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-5 z-50 bg-teal-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-teal-700 transition-colors duration-300"
+          className="fixed bottom-24 right-5 z-50 bg-teal-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-teal-700 transition-colors duration-300 border-2 border-white"
           aria-label="Scroll to top"
         >
           <FaArrowUp className="text-white w-6 h-6" />

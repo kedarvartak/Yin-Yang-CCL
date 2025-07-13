@@ -15,6 +15,7 @@ import Marone from "./pages/blog-marathi-1";
 import Martwo from "./pages/blog-marathi-2";
 import Marthree from "./pages/blog-marathi-3";
 import Marfour from "./pages/blog-marathi-4";
+import Marfive from "./pages/blog-marathi-5";
 import Crisis from "./pages/crisis-blog";
 import Political from "./pages/political-blog"
 import Secure from "./pages/secure-blog";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/Martwo" element={<Martwo/>} />
         <Route path="/Marthree" element={<Marthree/>} />
         <Route path="/Marfour" element={<Marfour/>} />
+        <Route path="/Marfive" element={<Marfive/>} />
         <Route path="/Crisis" element={<Crisis/>} />
         <Route path="/Political" element={<Political/>} />
         <Route path="/Secure" element={<Secure/>} />

@@ -9,7 +9,6 @@ import inter from '../components/assets/inter.jpg';
 import chancellor from '../components/assets/chancellor.jpg';
 import WhatsApp from '../components/whatsapp';
 import WhatsAppAndScrollToTop from '../components/goUP';
-import CallButton from '../components/call';
 import { FaAward, FaUniversity, FaUserGraduate, FaGlobeAsia } from 'react-icons/fa';
 import jinhua from "../components/assets/jinhua.jpg"
 
@@ -148,10 +147,7 @@ const sortAchievementsDescending = (achievements) => {
 };
 
 export default function AchievementsPage() {
-  // Duplicate the achievements data once for seamless scrolling
-  const duplicatedAchievements = [...achievementsData, ...achievementsData];
-
-  // Memoize the sorted otherAchievementsData to optimize performance
+  // Remove duplicated achievements and animation-related code
   const sortedOtherAchievements = useMemo(
     () => sortAchievementsDescending(otherAchievementsData),
     []
@@ -179,43 +175,13 @@ export default function AchievementsPage() {
     return text;
   };
 
-  // Ref to the ticker container
-  const tickerRef = useRef(null);
-
-  // State to store the width of the ticker
-  const [tickerWidth, setTickerWidth] = useState(0);
-
-  useEffect(() => {
-    // Function to set the ticker width
-    const updateWidth = () => {
-      if (tickerRef.current) {
-        setTickerWidth(tickerRef.current.scrollWidth / 2);
-      }
-    };
-
-    updateWidth();
-
-    // Add event listener to update width on window resize
-    window.addEventListener('resize', updateWidth);
-
-    // Cleanup event listener on unmount
-    return () => {
-      window.removeEventListener('resize', updateWidth);
-    };
-  }, []);
-
-  // Speed factor to control the animation speed
-  const speedFactor = 50; // Adjust this value as needed
-  const animationDuration = tickerWidth ? tickerWidth / speedFactor : 0;
-
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <WhatsApp />
       <WhatsAppAndScrollToTop />
       <Navbar />
-      <CallButton />
 
-      {/* Achievements Carousel Section */}
+      {/* Achievements Grid Section */}
       <div className="container mx-auto px-6 py-16 flex-grow">
         <h2
           className="text-5xl sm:text-5xl lg:text-6xl font-bold text-teal-600 mb-16 mt-8 text-left lg:scale-y-[1.20]"
@@ -224,40 +190,34 @@ export default function AchievementsPage() {
           Achievements
         </h2>
 
-        {/* Carousel Container */}
-        <div className="overflow-hidden relative">
-          <div
-            className="flex animate-scroll"
-            ref={tickerRef}
-          >
-            {/* map */}
-            {duplicatedAchievements.map((achievement, index) => (
-              <div
-                key={`${achievement.id}-${index}`}
-                className="flex-shrink-0 w-80 md:w-96 lg:w-1/3 px-4 py-8"
-              >
-                <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 flex flex-col h-full">
-                  {/* Image Section */}
-                  <img
-                    src={achievement.image}
-                    alt={`Achievement ${achievement.id} - ${achievement.text}`}
-                    className="w-full object-contain rounded-t-3xl"
-                    loading="lazy"
-                  />
-
-                  {/* Text Section */}
-                  <div className="p-6 flex-grow text-left">
-                    <p
-                      className="text-gray-800 text-base sm:text-lg md:text-xl font-medium leading-relaxed"
-                      style={{ fontFamily: 'Quicksand, sans-serif' }}
-                    >
-                      {achievement.text}
-                    </p>
-                  </div>
-                </div>
+        {/* Static Grid Container */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {achievementsData.map((achievement) => (
+            <div
+              key={achievement.id}
+              className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex flex-col h-full"
+            >
+              {/* Image Section */}
+              <div className="relative h-64 overflow-hidden rounded-t-3xl">
+                <img
+                  src={achievement.image}
+                  alt={`Achievement ${achievement.id} - ${achievement.text}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
-            ))}
-          </div>
+
+              {/* Text Section */}
+              <div className="p-6 flex-grow text-left">
+                <p
+                  className="text-gray-800 text-base sm:text-lg md:text-xl font-medium leading-relaxed"
+                  style={{ fontFamily: 'Quicksand, sans-serif' }}
+                >
+                  {achievement.text}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -307,36 +267,6 @@ export default function AchievementsPage() {
           ))}
         </div>
       </div>
-
-      {/* Custom Styles for Animation */}
-      <style jsx>{`
-        @keyframes scrollAnimation {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-${tickerWidth}px);
-          }
-        }
-
-        .animate-scroll {
-          animation: scrollAnimation ${animationDuration}s linear infinite;
-          display: flex;
-        }
-
-        /* Pause animation on hover or focus */
-        .animate-scroll:hover,
-        .animate-scroll:focus-within {
-          animation-play-state: paused;
-        }
-
-        /* Respect user's prefers-reduced-motion setting */
-        @media (prefers-reduced-motion: reduce) {
-          .animate-scroll {
-            animation: none;
-          }
-        }
-      `}</style>
 
       <Footer />
     </div>
